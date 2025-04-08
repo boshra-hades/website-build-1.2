@@ -24,7 +24,7 @@ const IndexPage = () => {
       {/* Hero Section */}
       <Hero
         maxWidth={'500px'}
-        image={'/banner1.png'} 
+        image={'/banner1.jpg'} 
         title={'Queer Art Australia'}
         subtitle={'Handmade Sculptures Crafted with Passion'}
         ctaText={'View Sculptures'}
