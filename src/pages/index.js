@@ -1,63 +1,52 @@
 import * as React from 'react';
-
+import { Link, navigate } from 'gatsby';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout/Layout';
 import AttributeGrid from '../components/AttributeGrid';
 import Container from '../components/Container';
-import Hero from '../components/Hero';
-import BlogPreviewGrid from '../components/BlogPreviewGrid';
-import Highlight from '../components/Highlight';
-import Layout from '../components/Layout/Layout';
+import Title from '../components/Title';
 import ProductCollectionGrid from '../components/ProductCollectionGrid';
 import ProductCardGrid from '../components/ProductCardGrid';
+import Highlight from '../components/Highlight';
 import Quote from '../components/Quote';
-import Title from '../components/Title';
-
-import { generateMockBlogData, generateMockProductData } from '../helpers/mock';
-
-import * as styles from './index.module.css';
-import { Link, navigate } from 'gatsby';
+import BlogPreviewGrid from '../components/BlogPreviewGrid';
 import { toOptimizedImage } from '../helpers/general';
+import * as styles from './index.module.css';
 
 const IndexPage = () => {
-  const newArrivals = generateMockProductData(3, 'shirt');
-  const blogData = generateMockBlogData(3);
-
+  // Replace this with real product data as you prepare your inventory
   const goToShop = () => {
     navigate('/shop');
   };
 
   return (
     <Layout disablePaddingBottom>
-      {/* Hero Container */}
+      {/* Hero Section */}
       <Hero
         maxWidth={'500px'}
-        image={'/banner1.png'}
-        title={'Essentials for a cold winter'}
-        subtitle={'Discover Autumn Winter 2021'}
-        ctaText={'shop now'}
+        image={'/queer-art-hero.jpg'} 
+        title={'Queer Art Australia'}
+        subtitle={'Handmade Sculptures Crafted with Passion'}
+        ctaText={'View Sculptures'}
         ctaAction={goToShop}
       />
 
-      {/* Message Container */}
+      {/* Message Section */}
       <div className={styles.messageContainer}>
         <p>
-          This is a demonstration of the Sydney theme for verse by{' '}
-          <span className={styles.gold}>matter design.</span>
-        </p>
-        <p>
-          wear by <span className={styles.gold}>sunspel</span> and{' '}
-          <span className={styles.gold}>scotch&soda</span>
+          Welcome to <strong>Queer Art Australia</strong> — where every sculpture is a celebration of uniqueness and creative expression.
         </p>
       </div>
 
-      {/* Collection Container */}
+      {/* Collection / Featured Sculptures */}
       <div className={styles.collectionContainer}>
         <Container size={'large'}>
-          <Title name={'New Collection'} />
+          <Title name={'Featured Sculptures'} />
           <ProductCollectionGrid />
         </Container>
       </div>
 
-      {/* New Arrivals */}
+      {/* New Arrivals or Latest Sculptures */}
       <div className={styles.newArrivalsContainer}>
         <Container>
           <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
@@ -66,78 +55,78 @@ const IndexPage = () => {
             showSlider
             height={480}
             columns={3}
-            data={newArrivals}
+            data={[]} {/* Replace [] with your dynamic data when ready */}
           />
         </Container>
       </div>
 
-      {/* Highlight  */}
+      {/* Highlight Section */}
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/highlight.png'}
-            altImage={'highlight image'}
-            miniImage={'/highlightmin.png'}
-            miniImageAlt={'mini highlight image'}
-            title={'Luxury Knitwear'}
-            description={`This soft lambswool jumper is knitted in Scotland, using yarn from one of the world's oldest spinners based in Fife`}
-            textLink={'shop now'}
-            link={'/shop'}
+            image={'/highlight.jpg'} 
+            altImage={'Highlight Sculpture'}
+            miniImage={'/highlight-min.jpg'}
+            miniImageAlt={'Mini Highlight Sculpture'}
+            title={'Exquisite Detail'}
+            description={
+              'Each sculpture is meticulously crafted, merging traditional technique with avant-garde aesthetics.'
+            }
+            textLink={'Learn More'}
+            link={'/about'}
           />
         </Container>
       </div>
 
-      {/* Promotion */}
+      {/* Promotion / Secondary Hero */}
       <div className={styles.promotionContainer}>
-        <Hero image={toOptimizedImage('/banner2.png')} title={`-50% off \n All Essentials`} />
+        <Hero
+          image={toOptimizedImage('/promotion-banner.jpg')}
+          title={`Exclusive Offer:\nCheck Our Latest Collection`}
+        />
         <div className={styles.linkContainers}>
-          <Link to={'/shop'}>WOMAN</Link>
-          <Link to={'/shop'}>MAN</Link>
+          <Link to={'/shop'}>SHOP NOW</Link>
         </div>
       </div>
 
-      {/* Quote */}
+      {/* Quote / Brand Statement */}
       <Quote
         bgColor={'var(--standard-light-grey)'}
-        title={'about Sydney'}
-        quote={
-          '“We believe in two things: the pursuit of quality in everything we do, and looking after one another. Everything else should take care of itself.”'
-        }
+        title={'About Queer Art Australia'}
+        quote={'“Art speaks where words are unable to explain.”'}
       />
 
-      {/* Blog Grid */}
+      {/* Blog / Journal Section */}
       <div className={styles.blogsContainer}>
         <Container size={'large'}>
-          <Title name={'Journal'} subtitle={'Notes on life and style'} />
-          <BlogPreviewGrid data={blogData} />
+          <Title name={'Journal'} subtitle={'Insights & Inspirations'} />
+          <BlogPreviewGrid data={[]} {/* Replace [] with dynamic blog data if available */} />
         </Container>
       </div>
 
-      {/* Promotion */}
+      {/* Additional Promotion Section */}
       <div className={styles.sustainableContainer}>
         <Hero
-          image={toOptimizedImage('/banner3.png')}
-          title={'We are Sustainable'}
-          subtitle={
-            'From caring for our land to supporting our people, discover the steps we’re taking to do more for the world around us.'
-          }
-          ctaText={'read more'}
+          image={toOptimizedImage('/sustainable-banner.jpg')}
+          title={'Our Promise'}
+          subtitle={'Committed to ethical creation and sustainable art practices.'}
+          ctaText={'Read More'}
           maxWidth={'660px'}
           ctaStyle={styles.ctaCustomButton}
         />
       </div>
 
-      {/* Social Media */}
+      {/* Social Media Section */}
       <div className={styles.socialContainer}>
         <Title
-          name={'Styled by You'}
-          subtitle={'Tag @sydney to be featured.'}
+          name={'Follow Us'}
+          subtitle={'Get behind-the-scenes looks and latest collection updates on Instagram'}
         />
         <div className={styles.socialContentGrid}>
-          <img src={toOptimizedImage(`/social/socialMedia1.png`)} alt={'social media 1'} />
-          <img src={toOptimizedImage(`/social/socialMedia2.png`)} alt={'social media 2'} />
-          <img src={toOptimizedImage(`/social/socialMedia3.png`)} alt={'social media 3'} />
-          <img src={toOptimizedImage(`/social/socialMedia4.png`)} alt={'social media 4'} />
+          <img src={toOptimizedImage(`/social/socialMedia1.jpg`)} alt={'social media 1'} />
+          <img src={toOptimizedImage(`/social/socialMedia2.jpg`)} alt={'social media 2'} />
+          <img src={toOptimizedImage(`/social/socialMedia3.jpg`)} alt={'social media 3'} />
+          <img src={toOptimizedImage(`/social/socialMedia4.jpg`)} alt={'social media 4'} />
         </div>
       </div>
       <AttributeGrid />
