@@ -28,7 +28,7 @@ const AboutPage = (props) => {
         <Hero
           maxWidth={'900px'}
           image={'/about.png'}
-          title={`Sydney \n A British brand since 1860`}
+          title={`QUEER ART AUSTRALIA \n since 2019`}
         />
 
         <div className={styles.navContainer}>
