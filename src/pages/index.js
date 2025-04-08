@@ -55,8 +55,9 @@ const IndexPage = () => {
             showSlider
             height={480}
             columns={3}
-            data={[]} {/* Replace [] with your dynamic data when ready */}
+            data={[]} 
           />
+          {/* Replace [] with your dynamic data when ready */}
         </Container>
       </div>
 
@@ -100,7 +101,8 @@ const IndexPage = () => {
       <div className={styles.blogsContainer}>
         <Container size={'large'}>
           <Title name={'Journal'} subtitle={'Insights & Inspirations'} />
-          <BlogPreviewGrid data={[]} {/* Replace [] with dynamic blog data if available */} />
+          <BlogPreviewGrid data={[]} />
+          {/* Replace [] with dynamic blog data if available */}
         </Container>
       </div>
 
@@ -129,6 +131,7 @@ const IndexPage = () => {
           <img src={toOptimizedImage(`/social/socialMedia4.jpg`)} alt={'social media 4'} />
         </div>
       </div>
+      
       <AttributeGrid />
     </Layout>
   );
