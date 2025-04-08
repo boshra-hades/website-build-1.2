@@ -126,9 +126,7 @@ const IndexPage = () => {
         />
         <div className={styles.socialContentGrid}>
           <img src={toOptimizedImage(`/social/socialMedia1.jpg`)} alt={'social media 1'} />
-          <img src={toOptimizedImage(`/social/socialMedia2.jpg`)} alt={'social media 2'} />
-          <img src={toOptimizedImage(`/social/socialMedia3.jpg`)} alt={'social media 3'} />
-          <img src={toOptimizedImage(`/social/socialMedia4.jpg`)} alt={'social media 4'} />
+   
         </div>
       </div>
       

@@ -1,19 +1,18 @@
 import React, { useRef } from 'react';
-
 import Container from '../components/Container';
 import Hero from '../components/Hero';
 import ThemeLink from '../components/ThemeLink';
 import Layout from '../components/Layout/Layout';
-
 import * as styles from './about.module.css';
 import { toOptimizedImage } from '../helpers/general';
-const AboutPage = (props) => {
-  let historyRef = useRef();
-  let valuesRef = useRef();
-  let sustainabilityRef = useRef();
+
+const AboutPage = () => {
+  const historyRef = useRef();
+  const valuesRef = useRef();
+  const sustainabilityRef = useRef();
 
   const handleScroll = (elementReference) => {
-    if (elementReference) {
+    if (elementReference && elementReference.current) {
       window.scrollTo({
         behavior: 'smooth',
         top: elementReference.current.offsetTop - 280,
@@ -24,10 +23,10 @@ const AboutPage = (props) => {
   return (
     <Layout disablePaddingBottom>
       <div className={styles.root}>
-        {/* Hero Container */}
+        {/* Hero Section */}
         <Hero
           maxWidth={'900px'}
-          image={'/about.png'}
+          image={'/about.png'}  // Replace with your desired about-page hero image in the static folder
           title={`QUEER ART AUSTRALIA \n since 2019`}
         />
 
@@ -38,88 +37,62 @@ const AboutPage = (props) => {
           <ThemeLink onClick={() => handleScroll(valuesRef)} to={'#values'}>
             Values
           </ThemeLink>
-          <ThemeLink
-            onClick={() => handleScroll(sustainabilityRef)}
-            to={'#sustainability'}
-          >
+          <ThemeLink onClick={() => handleScroll(sustainabilityRef)} to={'#sustainability'}>
             Sustainability
           </ThemeLink>
         </div>
 
         <Container size={'large'} spacing={'min'}>
+          {/* History Section */}
           <div className={styles.detailContainer} ref={historyRef}>
             <p>
-              Founded in 1860, Sydney is an innovative British brand with a
-              contemporary edge. We make timeless everyday luxury clothing.
-            </p>
-            <br />
-            <br />
-            <p>
-              We created some of the world's first T-shirts and spent decades
-              perfecting the feel of the cotton. Today we are the only brand
-              that makes T-shirts in its own factory in the UK. And we do this
-              in the same factory we have occupied since 1937.
+              Queer Art Australia began as a personal journey in embracing authentic
+              self-expression and creative freedom. Founded by a passionate artist from the queer community, our sculptures are lovingly
+              handcrafted—from raw materials to expressive forms—that capture the essence of transformation and identity.
+              Each piece is a vivid celebration of queer, trans, and non-binary experiences, inviting you to experience art that challenges traditional boundaries and honors diversity.
             </p>
           </div>
         </Container>
 
         <div className={styles.imageContainer}>
-          <img alt={'shirt brand'} src={toOptimizedImage('/about1.png')}></img>
+          <img alt={'studio or sculpture work'} src={toOptimizedImage('/about1.png')} />
         </div>
 
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
+            {/* Values Section */}
             <h3>Our Values</h3>
             <div ref={valuesRef}>
               <p>
-                Sunspel produced some of the world's earliest T-shirts. In the
-                late 1800s the business made luxury tunics and undershirts from
-                lightweight Sea Island cotton for export to the Far East and
-                other warm climates. While these garments initially had silk
-                buttoned plackets, these were removed in the early 1900s and
-                replaced with simple bound necks to reduce manufacturing costs -
-                creating the T-shirt. We've supplied the world as the T-shirt
-                has evolved from underwear to outerwear, from symbol of youthful
-                rebellion to everyday wardrobe staple, and we've spent decades
-                refining its every last aspect.
+                At Queer Art Australia, our values guide every stroke and chisel mark.
+                We celebrate authenticity by honoring each unique identity and creating art that resonates with our vibrant community.
+                Our commitment to handcrafted excellence means every sculpture is made with meticulous care,
+                ensuring that art becomes a personal expression of strength, resilience, and beauty.
               </p>
               <ol>
-                <li>Be an ecowear</li>
-                <li>Sophisticated and not mass-produced</li>
-                <li>Only natural materials</li>
+                <li>Handcrafted Excellence</li>
+                <li>Diverse & Inclusive Expression</li>
+                <li>Sustainable & Ethical Practice</li>
               </ol>
-              <img alt={'founder'} src={toOptimizedImage('/about2.png')}></img>
+              <img alt={'Founder or artistic process'} src={toOptimizedImage('/about2.png')} />
             </div>
+
+            {/* Sustainability Section */}
             <h3>Sustainability</h3>
-            <div id={'#sustainability'} ref={sustainabilityRef}>
+            <div id={'sustainability'} ref={sustainabilityRef}>
               <p>
-                Our founder, Thomas Hill, had both an eye for quality and a
-                desire to innovate. As well as using the finest fibres such as
-                Sea Island cotton, cashmere and silk, he invented his own
-                fabrics. Sunspel continues this commitment to innovation today
-                and our unique fabrics include: Q100 Sea Island cotton, Q82
-                Supima cotton, Q75 warp knit mesh cotton and Q14 warp knit
-                cellular cotton. The technology behind these fabrics remains
-                unchanged today and all Sunspel products use the finest cottons,
-                wools and fibres.
-              </p>
-              <p>
-                Made in Long Eaton, England and crafted from our luxurious long
-                staple Supima cotton for unparalleled softness, comfort and
-                durability, the Sunspel T-shirt has a classic fit and only the
-                most essential details.{' '}
-              </p>
-              <p>
-                With over 100 years spent perfecting fabric, fit and style, the
-                Sunspel Classic T-shirt is recognised as the finest in the
-                world.
+                Our artistry is deeply rooted in responsibility.
+                We use ethically sourced, natural materials and environmentally conscious methods
+                that not only ensure the quality of our sculptures but also reflect a commitment
+                to preserving our planet. Every piece is crafted with a dedication to sustainable innovation,
+                ensuring that our art honors both the spirit of the queer community and the natural world.
               </p>
             </div>
           </div>
         </Container>
 
         <div className={styles.imageContainer}>
-          <img alt={'shirt backwards'} src={toOptimizedImage('/about3.png')}></img>
+          <img alt={'artistic view'} src={toOptimizedImage('/about3.png')} />
         </div>
       </div>
     </Layout>
