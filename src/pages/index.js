@@ -24,7 +24,7 @@ const IndexPage = () => {
       {/* Hero Section */}
       <Hero
         maxWidth={'500px'}
-        image={'/queer-art-hero.jpg'} 
+        image={'/banner1.jpg'} 
         title={'Queer Art Australia'}
         subtitle={'Handmade Sculptures Crafted with Passion'}
         ctaText={'View Sculptures'}
@@ -34,7 +34,7 @@ const IndexPage = () => {
       {/* Message Section */}
       <div className={styles.messageContainer}>
         <p>
-          Welcome to <strong>Queer Art Australia</strong> — where every sculpture is a celebration of uniqueness and creative expression.
+          Welcome to <strong>QUEER ART AUSTRALIA</strong> — where every sculpture is a celebration of uniqueness and creative expression.
         </p>
       </div>
 
