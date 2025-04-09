@@ -1,115 +1,132 @@
 [
     {
-        "productCode": "MJUM8066-GYDZ",
-        "name": "Lambswool Crew Neck Jumper",
-        "vendor": "Sunspel",
-        "price": 75,
-        "alt": "lambswool crew neck jumper",
-        "image": "/products/pdp1.jpeg",
-        "colorOptions": [
-            {"color": "#000000", "title": "Anthracite Melange"},
-            {"color": "#4D34AE", "title": "Pale Purple"},
-            {"color": "#488266", "title": "Green Moss"}
-        ],
-        "sizeOptions": ["xs", "s", "m", "l", "xl"],
-        "wishlist": true,
-        "tags": ["sample"],
-        "gallery": [
-            {"image": "/products/pdp1.jpeg", "alt": "pdp description 1"},
-            {"image": "/products/pdp2.jpeg", "alt": "pdp description 2"},
-            {"image": "/products/pdp3.jpeg", "alt": "pdp description 3"},
-            {"image": "/products/pdp4.jpeg", "alt": "pdp description 4"}
-        ],
-        "description": "This soft lambswool jumper is knitted in Scotland, using yarn from one of the world's oldest spinners based in Fife. Once knitted, the garment is washed in Scottish spring water to make it beautifully soft."
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 1",
-        "image": "/products/shirt1.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 2",
-        "image": "/products/shirt2.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Classic T-Shirt",
-        "price": 75,
-        "alt": "classic t-shirt 3",
-        "image": "/products/shirt3.jpg",
-        "tags": ["shirt", "men"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 13.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman1.jpeg",
-        "tags": ["woman"],
-        "meta": "+ 2 colors"
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman2.jpeg",
-        "tags": ["woman"]
-    },    
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 13.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman3.jpeg",
-        "tags": ["woman"],
-        "meta": "+ 2 colors"
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman4.jpeg",
-        "tags": ["woman"]
-    },
-    {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman5.jpeg",
-        "tags": ["woman"],
-        "originalPrice": 31.50
+      "sculptureCode": "QA001",
+      "name": "Emergence",
+      "artist": "Kevin Agopian",
+      "price": 2500,
+      "alt": "Emergence - front view",
+      "image": "/sculptures/Emergence.jpg",
 
+      "medium": "Bronze",
+      "dimensions": "24in x 12in x 10in",
+      "tags": ["handmade", "queer", "identity"],
+      "description": "A bold, handcrafted bronze sculpture celebrating the transformative journey of queer identity. Meticulously cast and finished, 'Emergence' embodies resilience and self-discovery."
     },
     {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 21,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman6.jpeg",
-        "tags": ["woman"]
+      "sculptureCode": "QA002",
+      "name": "Fluidity",
+      "artist": "Kevin Agopian",
+      "price": 3200,
+      "alt": "Fluidity - front view",
+      "image": "/sculptures/Fluidity.jpg",
+      
+      "medium": "Recycled Steel",
+      "dimensions": "30in x 15in x 12in",
+      "tags": ["handmade", "queer", "trans"],
+      "description": "A striking sculpture crafted from recycled steel that reflects the ever-changing nature of identity. 'Fluidity' captures the beauty of transformation with dynamic forms."
     },
     {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman3.jpeg",
-        "tags": ["woman"]
+      "sculptureCode": "QA003",
+      "name": "Radiance",
+      "artist": "Kevin Agopian",
+      "price": 2800,
+      "alt": "Radiance - front view",
+      "image": "/sculptures/Radiance.jpg",
+      
+      "medium": "Wood and Resin",
+      "dimensions": "22in x 18in x 8in",
+      "tags": ["handmade", "queer", "expression"],
+      "description": "This piece, titled 'Radiance', embodies the spirit of true self-expression. Crafted from sustainably sourced wood paired with resin, it evokes a sense of inner light and authenticity."
     },
     {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 15.90,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman2.jpeg",
-        "tags": ["woman"],
-        "originalPrice": 31.50
-
+      "sculptureCode": "QA004",
+      "name": "Resilience",
+      "artist": "Kevin Agopian",
+      "price": 3000,
+      "alt": "Resilience - front view",
+      "image": "/sculptures/Resilience.jpg",
+    
+      "medium": "Mixed Media",
+      "dimensions": "26in x 14in x 10in",
+      "tags": ["handmade", "queer", "strength"],
+      "description": "An inspiring piece titled 'Resilience' that symbolizes strength and perseverance. Crafted from an eclectic mix of materials, it celebrates the beauty of overcoming adversity and standing true to oneself."
     },
     {
-        "name": "Relaxed-fit graphic T-shirt",
-        "price": 21,
-        "alt": "relaxed t shirt woman",
-        "image": "/products/woman1.jpeg",
-        "tags": ["woman"]
+      "sculptureCode": "QA005",
+      "name": "Luminescence",
+      "artist": "Kevin Agopian",
+      "price": 2600,
+      "alt": "Luminescence - full view",
+      "image": "/sculptures/Luminescence.jpg",
+      "views": [
+        {
+          "view": "full",
+          "image": "/sculptures/Luminescence-back.jpg",
+          "alt": "Luminescence - full view"
+        }
+      ],
+      "medium": "Bronze and Patina",
+      "dimensions": "25in x 15in x 10in",
+      "tags": ["handmade", "queer", "luminous"],
+      "description": "'Luminescence' captures the radiant essence of identity through a delicate interplay of light and shadow, celebrating the transformative power of art."
+    },
+    {
+      "sculptureCode": "QA006",
+      "name": "Vibrance",
+      "artist": "Kevin Agopian",
+      "price": 3100,
+      "alt": "Vibrance - full view",
+      "image": "/sculptures/Vibrance.jpg",
+      "views": [
+        {
+          "view": "full",
+          "image": "/sculptures/Vibrance-back.jpg",
+          "alt": "Vibrance - full view"
+        }
+      ],
+      "medium": "Recycled Metals",
+      "dimensions": "28in x 18in x 12in",
+      "tags": ["handmade", "queer", "vibrant"],
+      "description": "'Vibrance' is a dynamic celebration of color and form, reflecting the diverse energy and creativity within the queer community."
+    },
+    {
+      "sculptureCode": "QA007",
+      "name": "Ethereal",
+      "artist": "Kevin Agopian",
+      "price": 2950,
+      "alt": "Ethereal - full view",
+      "image": "/sculptures/Ethereal.jpg",
+    
+      "medium": "Mixed Media",
+      "dimensions": "23in x 14in x 9in",
+      "tags": ["handmade", "queer", "delicate"],
+      "description": "'Ethereal' evokes a sense of otherworldly beauty and introspection, crafted with a sensitive touch that highlights the tender aspects of identity."
+    },
+    {
+      "sculptureCode": "QA008",
+      "name": "Continuum",
+      "artist": "Kevin Agopian",
+      "price": 3400,
+      "alt": "Continuum - full view",
+      "image": "/sculptures/Continuum.jpg",
+    
+      "medium": "Recycled Steel",
+      "dimensions": "30in x 20in x 12in",
+      "tags": ["handmade", "queer", "transformative"],
+      "description": "'Continuum' symbolizes the endless journey of transformation. Its bold lines and resilient form express strength in the evolution of identity."
+    },
+    {
+      "sculptureCode": "QA009",
+      "name": "Solstice",
+      "artist": "Kevin Agopian",
+      "price": 3300,
+      "alt": "Solstice - full view",
+      "image": "/sculptures/Solstice.jpg",
+ 
+      "medium": "Stone & Resin",
+      "dimensions": "27in x 16in x 11in",
+      "tags": ["handmade", "queer", "celestial"],
+      "description": "'Solstice' captures the rhythm of change and the beauty of balance. Its enduring form reflects the interplay between light and darkness, honoring moments of transformation."
     }
   ]
+  
