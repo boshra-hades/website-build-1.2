@@ -49,7 +49,7 @@ const IndexPage = () => {
       {/* New Arrivals or Latest Sculptures */}
       <div className={styles.newArrivalsContainer}>
         <Container>
-          <Title name={'New Arrivals'} link={'/shop'} textLink={'view all'} />
+          <Title name={'SCULPTURES'} link={'/shop'} textLink={'view all'} />
           <ProductCardGrid
             spacing={true}
             showSlider
@@ -65,9 +65,9 @@ const IndexPage = () => {
       <div className={styles.highlightContainer}>
         <Container size={'large'} fullMobile>
           <Highlight
-            image={'/highlight.jpg'} 
+            image={'/2.png'} 
             altImage={'Highlight Sculpture'}
-            miniImage={'/highlight-min.jpg'}
+            miniImage={'/6.png'}
             miniImageAlt={'Mini Highlight Sculpture'}
             title={'Exquisite Detail'}
             description={
