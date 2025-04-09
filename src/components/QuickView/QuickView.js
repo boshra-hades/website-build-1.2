@@ -13,10 +13,25 @@ import { toOptimizedImage } from '../../helpers/general';
 
 const QuickView = (props) => {
   const { close, buttonTitle = 'Add to Bag' } = props;
-  const sampleProduct = generateMockProductData(1, 'sample')[0];
+
+  // Get a sample product from the mock data
+  const sampleProductFromMock = generateMockProductData(1, 'sample')[0];
+
+  // Define fallbacks if colorOptions or sizeOptions aren't defined
+  const sampleProduct = {
+    ...sampleProductFromMock,
+    colorOptions: sampleProductFromMock.colorOptions || [
+      { color: '#FFFFFF', title: 'White' },
+      { color: '#FF0000', title: 'Red' },
+      { color: '#000000', title: 'Black' },
+    ],
+    sizeOptions: sampleProductFromMock.sizeOptions || ['One Size'],
+  };
 
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
   const showNotification = ctxAddItemNotification.showNotification;
+
+  // Use safe fallback values with initial state setup
   const [activeSwatch, setActiveSwatch] = useState(
     sampleProduct.colorOptions[0]
   );
@@ -36,10 +51,13 @@ const QuickView = (props) => {
         <div className={styles.productContainer}>
           <span className={styles.productName}>{sampleProduct.name}</span>
           <div className={styles.price}>
-            <CurrencyFormatter amount={sampleProduct.price}></CurrencyFormatter>
+            <CurrencyFormatter amount={sampleProduct.price} />
           </div>
           <div className={styles.productImageContainer}>
-            <img alt={sampleProduct.alt} src={toOptimizedImage(sampleProduct.image)}></img>
+            <img
+              alt={sampleProduct.alt}
+              src={toOptimizedImage(sampleProduct.image)}
+            />
           </div>
         </div>
 
@@ -59,7 +77,7 @@ const QuickView = (props) => {
           />
         </div>
 
-        <Button onClick={() => handleAddToBag()} fullWidth level={'primary'}>
+        <Button onClick={handleAddToBag} fullWidth level={'primary'}>
           {buttonTitle}
         </Button>
       </div>
