@@ -1,41 +1,40 @@
 import React, { useState, useContext } from 'react';
-
 import Button from '../Button';
 import CurrencyFormatter from '../CurrencyFormatter';
 import SizeList from '../SizeList';
 import SwatchList from '../SwatchList';
-
 import { generateMockProductData } from '../../helpers/mock';
 import AddItemNotificationContext from '../../context/AddItemNotificationProvider';
-
 import * as styles from './QuickView.module.css';
 import { toOptimizedImage } from '../../helpers/general';
 
 const QuickView = (props) => {
   const { close, buttonTitle = 'Add to Bag' } = props;
 
-  // Get a sample product from the mock data
-  const sampleProductFromMock = generateMockProductData(1, 'sample')[0];
+  // Get sample product data from mock function.
+  const sampleProductFromMock = generateMockProductData(1, 'sample')[0] || {};
 
-  // Define fallbacks if colorOptions or sizeOptions aren't defined
+  // Build a product object with fallback defaults for colorOptions and sizeOptions.
   const sampleProduct = {
     ...sampleProductFromMock,
-    colorOptions: sampleProductFromMock.colorOptions || [
+    colorOptions: sampleProductFromMock?.colorOptions || [
       { color: '#FFFFFF', title: 'White' },
       { color: '#FF0000', title: 'Red' },
       { color: '#000000', title: 'Black' },
     ],
-    sizeOptions: sampleProductFromMock.sizeOptions || ['One Size'],
+    sizeOptions: sampleProductFromMock?.sizeOptions || ['One Size'],
   };
 
+  // Use context for the add-to-bag notification.
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
   const showNotification = ctxAddItemNotification.showNotification;
 
-  // Use safe fallback values with initial state setup
+  // Initialize state using safe defaults
   const [activeSwatch, setActiveSwatch] = useState(
     sampleProduct.colorOptions[0]
   );
   const [activeSize, setActiveSize] = useState(sampleProduct.sizeOptions[0]);
+  const [qty, setQty] = useState(1);
 
   const handleAddToBag = () => {
     close();
