@@ -5,7 +5,7 @@
       "artist": "Kevin Agopian",
       "price": 2500,
       "alt": "Emergence - front view",
-      "image": "/sculptures/Emergence.jpg",
+      "image": "/sculptures/Emergence.png",
 
       "medium": "Bronze",
       "dimensions": "24in x 12in x 10in",
@@ -18,7 +18,7 @@
       "artist": "Kevin Agopian",
       "price": 3200,
       "alt": "Fluidity - front view",
-      "image": "/sculptures/Fluidity.jpg",
+      "image": "/sculptures/Fluidity.png",
       
       "medium": "Recycled Steel",
       "dimensions": "30in x 15in x 12in",
@@ -31,7 +31,7 @@
       "artist": "Kevin Agopian",
       "price": 2800,
       "alt": "Radiance - front view",
-      "image": "/sculptures/Radiance.jpg",
+      "image": "/sculptures/Radiance.png",
       
       "medium": "Wood and Resin",
       "dimensions": "22in x 18in x 8in",
@@ -44,7 +44,7 @@
       "artist": "Kevin Agopian",
       "price": 3000,
       "alt": "Resilience - front view",
-      "image": "/sculptures/Resilience.jpg",
+      "image": "/sculptures/Resilience.png",
     
       "medium": "Mixed Media",
       "dimensions": "26in x 14in x 10in",
@@ -57,11 +57,11 @@
       "artist": "Kevin Agopian",
       "price": 2600,
       "alt": "Luminescence - full view",
-      "image": "/sculptures/Luminescence.jpg",
+      "image": "/sculptures/Luminescence.png",
       "views": [
         {
           "view": "full",
-          "image": "/sculptures/Luminescence-back.jpg",
+          "image": "/sculptures/Luminescence-back.png",
           "alt": "Luminescence - full view"
         }
       ],
@@ -76,11 +76,11 @@
       "artist": "Kevin Agopian",
       "price": 3100,
       "alt": "Vibrance - full view",
-      "image": "/sculptures/Vibrance.jpg",
+      "image": "/sculptures/Vibrance.png",
       "views": [
         {
           "view": "full",
-          "image": "/sculptures/Vibrance-back.jpg",
+          "image": "/sculptures/Vibrance-back.png",
           "alt": "Vibrance - full view"
         }
       ],
@@ -95,7 +95,7 @@
       "artist": "Kevin Agopian",
       "price": 2950,
       "alt": "Ethereal - full view",
-      "image": "/sculptures/Ethereal.jpg",
+      "image": "/sculptures/Ethereal.png",
     
       "medium": "Mixed Media",
       "dimensions": "23in x 14in x 9in",
@@ -108,7 +108,7 @@
       "artist": "Kevin Agopian",
       "price": 3400,
       "alt": "Continuum - full view",
-      "image": "/sculptures/Continuum.jpg",
+      "image": "/sculptures/Continuum.png",
     
       "medium": "Recycled Steel",
       "dimensions": "30in x 20in x 12in",
@@ -121,7 +121,7 @@
       "artist": "Kevin Agopian",
       "price": 3300,
       "alt": "Solstice - full view",
-      "image": "/sculptures/Solstice.jpg",
+      "image": "/sculptures/Solstice.png",
  
       "medium": "Stone & Resin",
       "dimensions": "27in x 16in x 11in",
