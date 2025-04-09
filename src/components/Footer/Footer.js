@@ -168,11 +168,11 @@ const Footer = (prop) => {
               </div>
               <span>
                 {new Date().getFullYear()} (c) . Built by{' '}
-                <Button target={true} href="itcentralhub@outlook.com">
+                <Button target={true} href="mailto:itcentralhub@outlook.com">
                   BOSHRA
                 </Button>{' '}
                 Powered by{' '}
-                <Button target={true} href="itcentralhub@outlook.com">
+                <Button target={true} href="mailto:itcentralhub@outlook.com">
                   BOSHRA 
                 </Button>
               </span>

@@ -1,14 +1,19 @@
 import React from 'react';
 import * as styles from './Chip.module.css';
 
-import Icon from '../Icons/Icon';
-
-const Chip = (props) => {
-  const { name, close } = props;
+const Chip = ({ name, onRemove }) => {
   return (
-    <div className={styles.root} role={'presentation'} onClick={close}>
-      <span>{name}</span>
-      <Icon symbol={'cross'}></Icon>
+    <div className={styles.chip}>
+      {name}
+      {onRemove && (
+        <span 
+          className={styles.closeIcon} 
+          role="button" 
+          onClick={() => onRemove(name)}
+        >
+          ✕
+        </span>
+      )}
     </div>
   );
 };

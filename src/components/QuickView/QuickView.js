@@ -11,29 +11,40 @@ import { toOptimizedImage } from '../../helpers/general';
 const QuickView = (props) => {
   const { close, buttonTitle = 'Add to Bag' } = props;
 
-  // Get sample product data from mock function.
+  // Get sample product from the mock function. If undefined, fallback to an empty object.
   const sampleProductFromMock = generateMockProductData(1, 'sample')[0] || {};
 
-  // Build a product object with fallback defaults for colorOptions and sizeOptions.
+  // Construct a product object that always has colorOptions and sizeOptions.
   const sampleProduct = {
     ...sampleProductFromMock,
-    colorOptions: sampleProductFromMock?.colorOptions || [
-      { color: '#FFFFFF', title: 'White' },
-      { color: '#FF0000', title: 'Red' },
-      { color: '#000000', title: 'Black' },
-    ],
-    sizeOptions: sampleProductFromMock?.sizeOptions || ['One Size'],
+    // If colorOptions exists and has at least one entry, use it; otherwise, provide default colors.
+    colorOptions:
+      sampleProductFromMock?.colorOptions &&
+      sampleProductFromMock.colorOptions.length > 0
+        ? sampleProductFromMock.colorOptions
+        : [
+            { color: '#FFFFFF', title: 'White' },
+            { color: '#FF0000', title: 'Red' },
+            { color: '#000000', title: 'Black' }
+          ],
+    // If sizeOptions exists and has at least one entry, use it; otherwise, fallback to "One Size".
+    sizeOptions:
+      sampleProductFromMock?.sizeOptions &&
+      sampleProductFromMock.sizeOptions.length > 0
+        ? sampleProductFromMock.sizeOptions
+        : ['One Size']
   };
 
-  // Use context for the add-to-bag notification.
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
   const showNotification = ctxAddItemNotification.showNotification;
 
-  // Initialize state using safe defaults
+  // Initialize component state using the safe defaults
   const [activeSwatch, setActiveSwatch] = useState(
     sampleProduct.colorOptions[0]
   );
-  const [activeSize, setActiveSize] = useState(sampleProduct.sizeOptions[0]);
+  const [activeSize, setActiveSize] = useState(
+    sampleProduct.sizeOptions[0]
+  );
   const [qty, setQty] = useState(1);
 
   const handleAddToBag = () => {

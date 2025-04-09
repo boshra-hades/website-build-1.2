@@ -7,8 +7,9 @@
     "alt": "Emergence - front view",
     "image": "/sculptures/Emergence.png",
     "colorOptions": [
-    { "color": "#FFFFFF", "title": "White" }
-  ],
+      { "color": "#FFFFFF", "title": "White" }
+    ],
+    "finish": { "name": "White", "value": false },
     "medium": "Clay",
     "dimensions": "24in x 12in x 10in",
     "tags": ["handmade", "queer", "identity"],
@@ -22,8 +23,9 @@
     "alt": "Fluidity - front view",
     "image": "/sculptures/Fluidity.png",
     "colorOptions": [
-    { "color": "#000000", "title": "Black" }
-  ],
+      { "color": "#000000", "title": "Black" }
+    ],
+    "finish": { "name": "Black", "value": false },
     "medium": "Clay",
     "dimensions": "30in x 15in x 12in",
     "tags": ["handmade", "queer", "trans"],
@@ -39,6 +41,7 @@
     "colorOptions": [
       { "color": "#000000", "title": "Black" }
     ],
+    "finish": { "name": "Black", "value": false },
     "medium": "Clay",
     "dimensions": "22in x 18in x 8in",
     "tags": ["handmade", "queer", "expression"],
@@ -54,6 +57,7 @@
     "colorOptions": [
       { "color": "#FF0000", "title": "Red" }
     ],
+    "finish": { "name": "Red", "value": false },
     "medium": "Clay",
     "dimensions": "26in x 14in x 10in",
     "tags": ["handmade", "queer", "strength"],
@@ -69,6 +73,7 @@
     "colorOptions": [
       { "color": "#FFFFFF", "title": "White" }
     ],
+    "finish": { "name": "White", "value": false },
     "views": [
       {
         "view": "full",
@@ -91,6 +96,7 @@
     "colorOptions": [
       { "color": "#FFFFFF", "title": "White" }
     ],
+    "finish": { "name": "White", "value": false },
     "views": [
       {
         "view": "full",
@@ -113,6 +119,7 @@
     "colorOptions": [
       { "color": "#FFFFFF", "title": "White" }
     ],
+    "finish": { "name": "White", "value": false },
     "medium": "Clay",
     "dimensions": "23in x 14in x 9in",
     "tags": ["handmade", "queer", "delicate"],
@@ -128,6 +135,7 @@
     "colorOptions": [
       { "color": "#FFFFFF", "title": "White" }
     ],
+    "finish": { "name": "White", "value": false },
     "medium": "Clay",
     "dimensions": "30in x 20in x 12in",
     "tags": ["handmade", "queer", "transformative"],
@@ -143,6 +151,7 @@
     "colorOptions": [
       { "color": "#FFFFFF", "title": "White" }
     ],
+    "finish":{ "name": "White", "value": false },
     "medium": "Clay",
     "dimensions": "27in x 16in x 11in",
     "tags": ["handmade", "queer", "celestial"],
