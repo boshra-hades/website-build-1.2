@@ -3,18 +3,18 @@
  * 
  * Determine whether variable is a number
  * 
- * @param {*} str 
+ * @param {*} str
  *
-  import { isNumeric } from '../helpers/general'
-
-  isNumeric(value)
-*/
+ * Example:
+ *   import { isNumeric } from '../helpers/general'
+ *   isNumeric(value)
+ */
 function isNumeric(str) {
-  if (['string', 'number'].indexOf(typeof str) === -1) return false; // we only process strings and numbers!
+  if (['string', 'number'].indexOf(typeof str) === -1) return false; // Process only strings and numbers!
   return (
-    !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
-    !isNaN(parseFloat(str))
-  ); // ...and ensure strings of whitespace fail
+    !isNaN(str) && // Use type coercion to ensure the entire string is numeric...
+    !isNaN(parseFloat(str)) // ...and that strings of whitespace fail
+  );
 }
 
 /**
@@ -22,11 +22,11 @@ function isNumeric(str) {
  * 
  * Checks the provided email address and validates its format
  * 
- * @param   {String} email  The email address
+ * @param {String} email  The email address
  * 
-    import { validateEmail } from '../helpers/general'
-
-    validateEmail(email)
+ * Example:
+ *   import { validateEmail } from '../helpers/general'
+ *   validateEmail(email)
  */
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -35,12 +35,11 @@ function validateEmail(email) {
 /**
  * Validate strong password format
  * 
+ * @param {String} password  The password
  * 
- * @param   {String} password  The password
- * 
-    import { validateStrongPassword } from '../helpers/general'
-
-    validateStrongPassword(email)
+ * Example:
+ *   import { validateStrongPassword } from '../helpers/general'
+ *   validateStrongPassword(password)
  */
 function validateStrongPassword(password) {
   return /(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(password);
@@ -49,49 +48,55 @@ function validateStrongPassword(password) {
 /**
  * Checks for empty string
  * 
- * @param   {String} email  input
+ * @param {String} input  The input string
  * 
-    import { isEmpty } from '../helpers/general'
-
-    isEmpty(email)
+ * Example:
+ *   import { isEmpty } from '../helpers/general'
+ *   isEmpty(input)
  */
 function isEmpty(input) {
-  if (input === '' || input === null || input === undefined) return true;
+  return input === '' || input === null || input === undefined;
 }
 
 /**
  * Checks if user is authenticated
  * 
- * 
- * 
-    import { isAuth } from '../helpers/general'
-
-    isAuth()
+ * Example:
+ *   import { isAuth } from '../helpers/general'
+ *   isAuth()
  */
 function isAuth() {
   const isBrowser = typeof window !== 'undefined';
   if (isBrowser) {
     const token = window.localStorage.getItem('key');
-    if (token) return true;
-    else return false;
+    return !!token;
   } else {
     return true;
   }
 }
 
 /**
- * Adds a query param to URLs which is captures by redirect rules
- * (when running in Netlify - otherwise it's harmless)
+ * Returns an optimized image URL.
  * 
-    import { toOptimizedImage } from '../helpers/general'
-
-    <img src={toOptimizedImage(image)} .../>
+ * For local images (starting with '/') that don’t already include the
+ * "imgcdn=true" parameter, appends the parameter for image optimization.
+ * If imageUrl is undefined or not a string, returns an empty string.
+ * 
+ * Example:
+ *   import { toOptimizedImage } from '../helpers/general'
+ *   <img src={toOptimizedImage(image)} .../>
  */
 function toOptimizedImage(imageUrl) {
-  if (!imageUrl.startsWith('/') || imageUrl.endsWith("imgcdn=true")) return imageUrl;
-  return imageUrl + 
-          (imageUrl.includes("?") ? "&" : "?") + 
-          "imgcdn=true";
+  // Check if imageUrl is defined and is a string
+  if (!imageUrl || typeof imageUrl !== 'string') {
+    return ''; // or you can return a default image URL if desired
+  }
+  
+  if (!imageUrl.startsWith('/') || imageUrl.endsWith("imgcdn=true")) {
+    return imageUrl;
+  }
+  
+  return imageUrl + (imageUrl.includes("?") ? "&" : "?") + "imgcdn=true";
 }
 
 export { isNumeric, validateEmail, validateStrongPassword, isEmpty, isAuth, toOptimizedImage };
