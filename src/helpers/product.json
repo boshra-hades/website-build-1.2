@@ -1,131 +1,133 @@
 [
-    {
-      "sculptureCode": "QA001",
-      "name": "Emergence",
-      "artist": "Kevin Agopian",
-      "price": 2500,
-      "alt": "Emergence - front view",
-      "image": "/sculptures/Emergence.png",
-
-      "medium": "Bronze",
-      "dimensions": "24in x 12in x 10in",
-      "tags": ["handmade", "queer", "identity"],
-      "description": "A bold, handcrafted bronze sculpture celebrating the transformative journey of queer identity. Meticulously cast and finished, 'Emergence' embodies resilience and self-discovery."
-    },
-    {
-      "sculptureCode": "QA002",
-      "name": "Fluidity",
-      "artist": "Kevin Agopian",
-      "price": 3200,
-      "alt": "Fluidity - front view",
-      "image": "/sculptures/Fluidity.png",
-      
-      "medium": "Recycled Steel",
-      "dimensions": "30in x 15in x 12in",
-      "tags": ["handmade", "queer", "trans"],
-      "description": "A striking sculpture crafted from recycled steel that reflects the ever-changing nature of identity. 'Fluidity' captures the beauty of transformation with dynamic forms."
-    },
-    {
-      "sculptureCode": "QA003",
-      "name": "Radiance",
-      "artist": "Kevin Agopian",
-      "price": 2800,
-      "alt": "Radiance - front view",
-      "image": "/sculptures/Radiance.png",
-      
-      "medium": "Wood and Resin",
-      "dimensions": "22in x 18in x 8in",
-      "tags": ["handmade", "queer", "expression"],
-      "description": "This piece, titled 'Radiance', embodies the spirit of true self-expression. Crafted from sustainably sourced wood paired with resin, it evokes a sense of inner light and authenticity."
-    },
-    {
-      "sculptureCode": "QA004",
-      "name": "Resilience",
-      "artist": "Kevin Agopian",
-      "price": 3000,
-      "alt": "Resilience - front view",
-      "image": "/sculptures/Resilience.png",
-    
-      "medium": "Mixed Media",
-      "dimensions": "26in x 14in x 10in",
-      "tags": ["handmade", "queer", "strength"],
-      "description": "An inspiring piece titled 'Resilience' that symbolizes strength and perseverance. Crafted from an eclectic mix of materials, it celebrates the beauty of overcoming adversity and standing true to oneself."
-    },
-    {
-      "sculptureCode": "QA005",
-      "name": "Luminescence",
-      "artist": "Kevin Agopian",
-      "price": 2600,
-      "alt": "Luminescence - full view",
-      "image": "/sculptures/Luminescence.png",
-      "views": [
-        {
-          "view": "full",
-          "image": "/sculptures/Luminescence-back.png",
-          "alt": "Luminescence - full view"
-        }
-      ],
-      "medium": "Bronze and Patina",
-      "dimensions": "25in x 15in x 10in",
-      "tags": ["handmade", "queer", "luminous"],
-      "description": "'Luminescence' captures the radiant essence of identity through a delicate interplay of light and shadow, celebrating the transformative power of art."
-    },
-    {
-      "sculptureCode": "QA006",
-      "name": "Vibrance",
-      "artist": "Kevin Agopian",
-      "price": 3100,
-      "alt": "Vibrance - full view",
-      "image": "/sculptures/Vibrance.png",
-      "views": [
-        {
-          "view": "full",
-          "image": "/sculptures/Vibrance-back.png",
-          "alt": "Vibrance - full view"
-        }
-      ],
-      "medium": "Recycled Metals",
-      "dimensions": "28in x 18in x 12in",
-      "tags": ["handmade", "queer", "vibrant"],
-      "description": "'Vibrance' is a dynamic celebration of color and form, reflecting the diverse energy and creativity within the queer community."
-    },
-    {
-      "sculptureCode": "QA007",
-      "name": "Ethereal",
-      "artist": "Kevin Agopian",
-      "price": 2950,
-      "alt": "Ethereal - full view",
-      "image": "/sculptures/Ethereal.png",
-    
-      "medium": "Mixed Media",
-      "dimensions": "23in x 14in x 9in",
-      "tags": ["handmade", "queer", "delicate"],
-      "description": "'Ethereal' evokes a sense of otherworldly beauty and introspection, crafted with a sensitive touch that highlights the tender aspects of identity."
-    },
-    {
-      "sculptureCode": "QA008",
-      "name": "Continuum",
-      "artist": "Kevin Agopian",
-      "price": 3400,
-      "alt": "Continuum - full view",
-      "image": "/sculptures/Continuum.png",
-    
-      "medium": "Recycled Steel",
-      "dimensions": "30in x 20in x 12in",
-      "tags": ["handmade", "queer", "transformative"],
-      "description": "'Continuum' symbolizes the endless journey of transformation. Its bold lines and resilient form express strength in the evolution of identity."
-    },
-    {
-      "sculptureCode": "QA009",
-      "name": "Solstice",
-      "artist": "Kevin Agopian",
-      "price": 3300,
-      "alt": "Solstice - full view",
-      "image": "/sculptures/Solstice.png",
- 
-      "medium": "Stone & Resin",
-      "dimensions": "27in x 16in x 11in",
-      "tags": ["handmade", "queer", "celestial"],
-      "description": "'Solstice' captures the rhythm of change and the beauty of balance. Its enduring form reflects the interplay between light and darkness, honoring moments of transformation."
-    }
-  ]
+  {
+    "sculptureCode": "QA001",
+    "name": "Emergence",
+    "artist": "Kevin Agopian",
+    "price": 2500,
+    "alt": "Emergence - front view",
+    "image": "/sculptures/Emergence.png",
+    "colorOptions": [],
+    "medium": "Bronze",
+    "dimensions": "24in x 12in x 10in",
+    "tags": ["handmade", "queer", "identity"],
+    "description": "A bold, handcrafted bronze sculpture celebrating the transformative journey of queer identity. Meticulously cast and finished, 'Emergence' embodies resilience and self-discovery."
+  },
+  {
+    "sculptureCode": "QA002",
+    "name": "Fluidity",
+    "artist": "Kevin Agopian",
+    "price": 3200,
+    "alt": "Fluidity - front view",
+    "image": "/sculptures/Fluidity.png",
+    "colorOptions": [],
+    "medium": "Recycled Steel",
+    "dimensions": "30in x 15in x 12in",
+    "tags": ["handmade", "queer", "trans"],
+    "description": "A striking sculpture crafted from recycled steel that reflects the ever-changing nature of identity. 'Fluidity' captures the beauty of transformation with dynamic forms."
+  },
+  {
+    "sculptureCode": "QA003",
+    "name": "Radiance",
+    "artist": "Kevin Agopian",
+    "price": 2800,
+    "alt": "Radiance - front view",
+    "image": "/sculptures/Radiance.png",
+    "colorOptions": [],
+    "medium": "Wood and Resin",
+    "dimensions": "22in x 18in x 8in",
+    "tags": ["handmade", "queer", "expression"],
+    "description": "This piece, titled 'Radiance', embodies the spirit of true self-expression. Crafted from sustainably sourced wood paired with resin, it evokes a sense of inner light and authenticity."
+  },
+  {
+    "sculptureCode": "QA004",
+    "name": "Resilience",
+    "artist": "Kevin Agopian",
+    "price": 3000,
+    "alt": "Resilience - front view",
+    "image": "/sculptures/Resilience.png",
+    "colorOptions": [],
+    "medium": "Mixed Media",
+    "dimensions": "26in x 14in x 10in",
+    "tags": ["handmade", "queer", "strength"],
+    "description": "An inspiring piece titled 'Resilience' that symbolizes strength and perseverance. Crafted from an eclectic mix of materials, it celebrates the beauty of overcoming adversity and standing true to oneself."
+  },
+  {
+    "sculptureCode": "QA005",
+    "name": "Luminescence",
+    "artist": "Kevin Agopian",
+    "price": 2600,
+    "alt": "Luminescence - full view",
+    "image": "/sculptures/Luminescence.png",
+    "colorOptions": [],
+    "views": [
+      {
+        "view": "full",
+        "image": "/sculptures/Luminescence-back.png",
+        "alt": "Luminescence - full view"
+      }
+    ],
+    "medium": "Bronze and Patina",
+    "dimensions": "25in x 15in x 10in",
+    "tags": ["handmade", "queer", "luminous"],
+    "description": "'Luminescence' captures the radiant essence of identity through a delicate interplay of light and shadow, celebrating the transformative power of art."
+  },
+  {
+    "sculptureCode": "QA006",
+    "name": "Vibrance",
+    "artist": "Kevin Agopian",
+    "price": 3100,
+    "alt": "Vibrance - full view",
+    "image": "/sculptures/Vibrance.png",
+    "colorOptions": [],
+    "views": [
+      {
+        "view": "full",
+        "image": "/sculptures/Vibrance-back.png",
+        "alt": "Vibrance - full view"
+      }
+    ],
+    "medium": "Recycled Metals",
+    "dimensions": "28in x 18in x 12in",
+    "tags": ["handmade", "queer", "vibrant"],
+    "description": "'Vibrance' is a dynamic celebration of color and form, reflecting the diverse energy and creativity within the queer community."
+  },
+  {
+    "sculptureCode": "QA007",
+    "name": "Ethereal",
+    "artist": "Kevin Agopian",
+    "price": 2950,
+    "alt": "Ethereal - full view",
+    "image": "/sculptures/Ethereal.png",
+    "colorOptions": [],
+    "medium": "Mixed Media",
+    "dimensions": "23in x 14in x 9in",
+    "tags": ["handmade", "queer", "delicate"],
+    "description": "'Ethereal' evokes a sense of otherworldly beauty and introspection, crafted with a sensitive touch that highlights the tender aspects of identity."
+  },
+  {
+    "sculptureCode": "QA008",
+    "name": "Continuum",
+    "artist": "Kevin Agopian",
+    "price": 3400,
+    "alt": "Continuum - full view",
+    "image": "/sculptures/Continuum.png",
+    "colorOptions": [],
+    "medium": "Recycled Steel",
+    "dimensions": "30in x 20in x 12in",
+    "tags": ["handmade", "queer", "transformative"],
+    "description": "'Continuum' symbolizes the endless journey of transformation. Its bold lines and resilient form express strength in the evolution of identity."
+  },
+  {
+    "sculptureCode": "QA009",
+    "name": "Solstice",
+    "artist": "Kevin Agopian",
+    "price": 3300,
+    "alt": "Solstice - full view",
+    "image": "/sculptures/Solstice.png",
+    "colorOptions": [],
+    "medium": "Stone & Resin",
+    "dimensions": "27in x 16in x 11in",
+    "tags": ["handmade", "queer", "celestial"],
+    "description": "'Solstice' captures the rhythm of change and the beauty of balance. Its enduring form reflects the interplay between light and darkness, honoring moments of transformation."
+  }
+]
