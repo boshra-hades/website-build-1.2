@@ -6,11 +6,13 @@
     "price": 2500,
     "alt": "Emergence - front view",
     "image": "/sculptures/Emergence.png",
-    "colorOptions": [],
-    "medium": "Bronze",
+    "colorOptions": [
+    { "color": "#FFFFFF", "title": "White" }
+  ],
+    "medium": "Clay",
     "dimensions": "24in x 12in x 10in",
     "tags": ["handmade", "queer", "identity"],
-    "description": "A bold, handcrafted bronze sculpture celebrating the transformative journey of queer identity. Meticulously cast and finished, 'Emergence' embodies resilience and self-discovery."
+    "description": "A bold, handcrafted clay sculpture celebrating the transformative journey of queer identity. Meticulously shaped and fired, 'Emergence' embodies resilience and self-discovery."
   },
   {
     "sculptureCode": "QA002",
@@ -19,11 +21,13 @@
     "price": 3200,
     "alt": "Fluidity - front view",
     "image": "/sculptures/Fluidity.png",
-    "colorOptions": [],
-    "medium": "Recycled Steel",
+    "colorOptions": [
+    { "color": "#000000", "title": "Black" }
+  ],
+    "medium": "Clay",
     "dimensions": "30in x 15in x 12in",
     "tags": ["handmade", "queer", "trans"],
-    "description": "A striking sculpture crafted from recycled steel that reflects the ever-changing nature of identity. 'Fluidity' captures the beauty of transformation with dynamic forms."
+    "description": "A striking clay sculpture that reflects the ever-changing nature of identity. 'Fluidity' captures the beauty of transformation through its dynamic curves and thoughtful form."
   },
   {
     "sculptureCode": "QA003",
@@ -32,11 +36,13 @@
     "price": 2800,
     "alt": "Radiance - front view",
     "image": "/sculptures/Radiance.png",
-    "colorOptions": [],
-    "medium": "Wood and Resin",
+    "colorOptions": [
+      { "color": "#000000", "title": "Black" }
+    ],
+    "medium": "Clay",
     "dimensions": "22in x 18in x 8in",
     "tags": ["handmade", "queer", "expression"],
-    "description": "This piece, titled 'Radiance', embodies the spirit of true self-expression. Crafted from sustainably sourced wood paired with resin, it evokes a sense of inner light and authenticity."
+    "description": "This piece, titled 'Radiance', embodies the spirit of true self-expression. Crafted from clay with careful attention, it evokes a sense of inner light and authenticity."
   },
   {
     "sculptureCode": "QA004",
@@ -45,11 +51,13 @@
     "price": 3000,
     "alt": "Resilience - front view",
     "image": "/sculptures/Resilience.png",
-    "colorOptions": [],
-    "medium": "Mixed Media",
+    "colorOptions": [
+      { "color": "#FF0000", "title": "Red" }
+    ],
+    "medium": "Clay",
     "dimensions": "26in x 14in x 10in",
     "tags": ["handmade", "queer", "strength"],
-    "description": "An inspiring piece titled 'Resilience' that symbolizes strength and perseverance. Crafted from an eclectic mix of materials, it celebrates the beauty of overcoming adversity and standing true to oneself."
+    "description": "An inspiring piece titled 'Resilience' that symbolizes strength and perseverance. Crafted entirely from clay, it celebrates the beauty of overcoming adversity and standing true to oneself."
   },
   {
     "sculptureCode": "QA005",
@@ -58,7 +66,9 @@
     "price": 2600,
     "alt": "Luminescence - full view",
     "image": "/sculptures/Luminescence.png",
-    "colorOptions": [],
+    "colorOptions": [
+      { "color": "#FFFFFF", "title": "White" }
+    ],
     "views": [
       {
         "view": "full",
@@ -66,10 +76,10 @@
         "alt": "Luminescence - full view"
       }
     ],
-    "medium": "Bronze and Patina",
+    "medium": "Clay",
     "dimensions": "25in x 15in x 10in",
     "tags": ["handmade", "queer", "luminous"],
-    "description": "'Luminescence' captures the radiant essence of identity through a delicate interplay of light and shadow, celebrating the transformative power of art."
+    "description": "'Luminescence' captures the radiant essence of identity through a delicate interplay of light and shadow, celebrating the transformative power of clay art."
   },
   {
     "sculptureCode": "QA006",
@@ -78,7 +88,9 @@
     "price": 3100,
     "alt": "Vibrance - full view",
     "image": "/sculptures/Vibrance.png",
-    "colorOptions": [],
+    "colorOptions": [
+      { "color": "#FFFFFF", "title": "White" }
+    ],
     "views": [
       {
         "view": "full",
@@ -86,10 +98,10 @@
         "alt": "Vibrance - full view"
       }
     ],
-    "medium": "Recycled Metals",
+    "medium": "Clay",
     "dimensions": "28in x 18in x 12in",
     "tags": ["handmade", "queer", "vibrant"],
-    "description": "'Vibrance' is a dynamic celebration of color and form, reflecting the diverse energy and creativity within the queer community."
+    "description": "'Vibrance' is a dynamic celebration of form and energy, capturing the diverse creativity of the queer community through innovative clay techniques."
   },
   {
     "sculptureCode": "QA007",
@@ -98,11 +110,13 @@
     "price": 2950,
     "alt": "Ethereal - full view",
     "image": "/sculptures/Ethereal.png",
-    "colorOptions": [],
-    "medium": "Mixed Media",
+    "colorOptions": [
+      { "color": "#FFFFFF", "title": "White" }
+    ],
+    "medium": "Clay",
     "dimensions": "23in x 14in x 9in",
     "tags": ["handmade", "queer", "delicate"],
-    "description": "'Ethereal' evokes a sense of otherworldly beauty and introspection, crafted with a sensitive touch that highlights the tender aspects of identity."
+    "description": "'Ethereal' evokes a sense of otherworldly beauty and introspection. Its refined clay form highlights the delicate balance of self-expression."
   },
   {
     "sculptureCode": "QA008",
@@ -111,11 +125,13 @@
     "price": 3400,
     "alt": "Continuum - full view",
     "image": "/sculptures/Continuum.png",
-    "colorOptions": [],
-    "medium": "Recycled Steel",
+    "colorOptions": [
+      { "color": "#FFFFFF", "title": "White" }
+    ],
+    "medium": "Clay",
     "dimensions": "30in x 20in x 12in",
     "tags": ["handmade", "queer", "transformative"],
-    "description": "'Continuum' symbolizes the endless journey of transformation. Its bold lines and resilient form express strength in the evolution of identity."
+    "description": "'Continuum' symbolizes the endless journey of transformation. Its bold clay form expresses strength and fluidity in the evolution of identity."
   },
   {
     "sculptureCode": "QA009",
@@ -124,10 +140,12 @@
     "price": 3300,
     "alt": "Solstice - full view",
     "image": "/sculptures/Solstice.png",
-    "colorOptions": [],
-    "medium": "Stone & Resin",
+    "colorOptions": [
+      { "color": "#FFFFFF", "title": "White" }
+    ],
+    "medium": "Clay",
     "dimensions": "27in x 16in x 11in",
     "tags": ["handmade", "queer", "celestial"],
-    "description": "'Solstice' captures the rhythm of change and the beauty of balance. Its enduring form reflects the interplay between light and darkness, honoring moments of transformation."
+    "description": "'Solstice' captures the rhythm of change and the beauty of balance. Its enduring clay form reflects the interplay between light and darkness, honoring moments of transformation."
   }
 ]
