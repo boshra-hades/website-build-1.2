@@ -1,103 +1,107 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import * as styles from './shop.module.css';
 
+import Accordion from '../components/Accordion';
 import Banner from '../components/Banner';
 import Breadcrumbs from '../components/Breadcrumbs';
-import CardController from '../components/CardController';
+import Checkbox from '../components/Checkbox';
 import Container from '../components/Container';
-import Chip from '../components/Chip';
-import Icon from '../components/Icons/Icon';
-import Layout from '../components/Layout';
+import Layout from '../components/Layout/Layout';
 import LayoutOption from '../components/LayoutOption';
 import ProductCardGrid from '../components/ProductCardGrid';
 import Button from '../components/Button';
-import Config from '../config.json';
 
-// Import your sculpture product data from JSON file
+import Config from '../config.json';
 import products from '../helpers/product.json';
 
-const ShopPage = (props) => {
-  // Use your real product data from JSON
-  const data = products; // Adjust any filtering if necessary
+const ShopV2Page = () => {
+  const [filterState, setFilterState] = useState(Config.filters);
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
-  useEffect(() => {
-    window.addEventListener('keydown', escapeHandler);
-    return () => window.removeEventListener('keydown', escapeHandler);
-  }, []);
-
-  const escapeHandler = (e) => {
-    if (e?.keyCode === undefined) return;
-    if (e.keyCode === 27) setShowFilter(false);
+  const filterTick = (e, categoryIndex, labelIndex) => {
+    const filterStateCopy = [...filterState];
+    filterStateCopy[categoryIndex].items[labelIndex].value = e.target.checked;
+    setFilterState(filterStateCopy);
   };
 
-  const [showFilter, setShowFilter] = useState(false);
+  const getActiveFilterValues = (categoryName) => {
+    const category = filterState.find(
+      (f) => f.category.toLowerCase() === categoryName.toLowerCase()
+    );
+    return category ? category.items.filter(item => item.value).map(item => item.name.toLowerCase()) : [];
+  };
+
+  const handleFilterApply = () => {
+    const activeColorFilters = getActiveFilterValues('Colour');
+    const newFilteredData = products.filter(product => {
+      if (activeColorFilters.length === 0) return true;
+      return product.colorOptions?.some(option => activeColorFilters.includes(option.title.toLowerCase()));
+    });
+
+    setFilteredProducts(newFilteredData);
+  };
 
   return (
     <Layout>
       <div className={styles.root}>
         <Container size={'large'} spacing={'min'}>
-          <div className={styles.breadcrumbContainer}>
-            <Breadcrumbs
-              crumbs={[
-                { link: '/', label: 'Home' },
-                // Update label if needed – since these are sculptures
-                { link: '/shop', label: 'Sculptures' },
-                { label: 'All Sculptures' },
-              ]}
-            />
-          </div>
+          <Breadcrumbs
+            crumbs={[{ link: '/', label: 'Home' }, { label: 'Sculptures' }]}
+          />
         </Container>
         <Banner
           maxWidth={'650px'}
           name={`Sculptures`}
           subtitle={
-            'Explore our collection of handmade clay sculptures that celebrate queer identity through art.'
+            'Explore our handcrafted clay sculptures that celebrate queer identity and creative expression.'
           }
         />
         <Container size={'large'} spacing={'min'}>
-          <div className={styles.metaContainer}>
-            <span className={styles.itemCount}>{data.length} items</span>
-            <div className={styles.controllerContainer}>
-              <div
-                className={styles.iconContainer}
-                role={'presentation'}
-                onClick={() => setShowFilter(!showFilter)}
-              >
-                <Icon symbol={'filter'} />
-                <span>Filters</span>
-              </div>
-              <div className={`${styles.iconContainer} ${styles.sortContainer}`}>
-                <span>Sort by</span>
-                <Icon symbol={'caret'} />
+          <div className={styles.content}>
+            <div className={styles.filterContainer}>
+              {filterState.map((category, categoryIndex) => (
+                <div key={categoryIndex}>
+                  <Accordion customStyle={styles} title={category.category}>
+                    {category.items.map((item, itemIndex) => (
+                      <div key={itemIndex} className={styles.filters}>
+                        <Checkbox
+                          size={'sm'}
+                          action={(e) => filterTick(e, categoryIndex, itemIndex)}
+                          label={item.name}
+                          isChecked={item.value}
+                          id={item.name}
+                          name={item.name}
+                        />
+                      </div>
+                    ))}
+                  </Accordion>
+                </div>
+              ))}
+              <div style={{ marginTop: '16px' }}>
+                <Button level="primary" fullWidth onClick={handleFilterApply}>
+                  View Items
+                </Button>
               </div>
             </div>
-          </div>
-          <CardController
-            closeFilter={() => setShowFilter(false)}
-            visible={showFilter}
-            filters={Config.filters}
-          />
-          <div className={styles.chipsContainer}>
-            <Chip name={'White'} />
-            <Chip name={'Red'} />
-            <Chip name={'Black'} />
-          </div>
-          <div className={styles.productContainer}>
-            <span className={styles.mobileItemCount}>{data.length} items</span>
-            <ProductCardGrid data={data} />
+
+            <div>
+              <div className={styles.metaContainer}>
+                <span className="standardSpan">{filteredProducts.length} items</span>
+              </div>
+              <ProductCardGrid height={'440px'} data={filteredProducts} />
+            </div>
           </div>
           <div className={styles.loadMoreContainer}>
-            <span>Showing {data.length} of {data.length} items</span>
+            <span>Showing {filteredProducts.length} of {products.length}</span>
             <Button fullWidth level={'secondary'}>
               LOAD MORE
             </Button>
           </div>
         </Container>
       </div>
-
       <LayoutOption />
     </Layout>
   );
 };
 
-export default ShopPage;
+export default ShopV2Page;

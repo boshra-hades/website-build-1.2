@@ -5,6 +5,11 @@ import * as styles from './Dropdown.module.css';
 const Dropdown = (props) => {
   const { label, optionList } = props;
 
+  // Don't render dropdown if there are no options
+  if (!optionList || optionList.length === 0) {
+    return null;
+  }
+
   return (
     <div className={styles.root}>
       <span className={styles.label}>{label}</span>
@@ -20,7 +25,7 @@ const Dropdown = (props) => {
           ))}
         </select>
         <div className={styles.caretContainer}>
-          <Icon symbol={'caret'}></Icon>
+          <Icon symbol={'caret'} />
         </div>
       </div>
     </div>

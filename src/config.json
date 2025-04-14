@@ -1,15 +1,5 @@
 {
-  "currencyList": [
-    { "value": "AUS", "label": "Australia (AUS $)" },
-    { "value": "CAD", "label": "Canada (CAD $)" },
-    { "value": "USD", "label": "United States (US $)" },
-    { "value": "EUR", "label": "Europe (EUR €)" },
-    { "value": "HKD", "label": "Hong Kong (HKD $)" }
-  ],
-  "languageList": [
-    { "value": "english", "label": "English" }
-
-  ],
+  
   "social": {
     "instagram": "https://www.instagram.com/queer_art_australia"
   },
@@ -21,66 +11,31 @@
     {
       "subTitle": "Info",
       "links": [
-        {
-          "text": "About Us",
-          "link": "/about"
-        },
-        {
-          "text": "Journal",
-          "link": "/blog"
-        },
-        {
-          "text": "Privacy Policy",
-          "link": "/support#policy"
-        }
+        { "text": "About Us", "link": "/about" },
+        { "text": "Privacy Policy", "link": "/support#policy" }
       ]
     },
     {
       "subTitle": "Support",
       "links": [
-        {
-          "text": "FAQ",
-          "link": "/faq"
-        },
-        {
-          "text": "Contact Us",
-          "link": "/contact"
-        },
-        {
-          "text": "Shipping & Returns",
-          "link": "/support#returns"
-        }
-      
+        { "text": "FAQ", "link": "/faq" },
+        { "text": "Contact Us", "link": "/contact" },
+        { "text": "Shipping & Returns", "link": "/support#returns" }
       ]
     }
   ],
   "headerLinks": [
-    {
-      "menuLabel": "Sculptures",
-      "menuLink": "/shop",
-      "category": null
-    },
-    {
-      "menuLabel": "Behind the Scenes",
-      "menuLink": "/blog",
-      "category": null
-    },
-    {
-      "menuLabel": "About",
-      "menuLink": "/about",
-      "category": null
-    }
+    { "menuLabel": "Sculptures", "menuLink": "/shop", "category": null },
+    { "menuLabel": "About", "menuLink": "/about", "category": null }
   ],
-  
-    "filters": [
-      {
-        "category": "Finish",
-        "items": [
-          { "name": "White", "value": false },
-          { "name": "Red", "value": false },
-          { "name": "Black", "value": false }
-        ]
-      }
-    ]
-  }
-  
+  "filters": [
+    {
+      "category": "Colour",
+      "items": [
+        { "name": "White", "value": false },
+        { "name": "Red", "value": false },
+        { "name": "Black", "value": false }
+      ]
+    }
+  ]
+}

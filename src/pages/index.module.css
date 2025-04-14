@@ -1,115 +1,137 @@
-.root {
-
+.intro, .statement, .footerCTA {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
 }
 
-.collectionContainer {
-    margin-top: 8px;
+.intro p, .statement p {
+  margin-top: 16px;
 }
 
-.promotionContainer {
-    position: relative;
+.statement h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
 
-.promotionContainer h2 {
-    font-size: 52px;
-    line-height: 62px;
+.artistSection {
+  max-width: 800px;
+  margin: 96px auto;
+  padding: 0 24px;
+  text-align: center;
 }
 
-
-.messageContainer {
-    text-align: center;
-    padding: 60px 0px;
-    margin: 0px 30px;
+.artistSection h2 {
+  font-size: 32px;
+  line-height: 42px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: var(--text-heading);
 }
 
-.messageContainer p {
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
+.artistSection p {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
+  margin-bottom: 24px;
 }
 
-.gold {
-    color: var(--standard-gold);
+/* Refined hero section appearance */
+.heroTitle {
+  font-family: var(--standard-header);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--text-heading);
+  letter-spacing: -0.5px;
 }
 
-.contentTitle{
-    text-align: center;
-    font-weight: normal;
-    font-size: 42px;
-    line-height: 50px;
-    margin-bottom: 16px;
+/* Optional: control max height of hero image to avoid overflow */
+.heroImage {
+  max-height: 600px;
+  object-fit: cover;
+  width: 100%;
 }
 
-.newArrivalsContainer {
-    margin-top: 64px;
+.intro {
+  max-width: 800px;
+  margin: 64px auto;
+  padding: 0 24px;
+  text-align: center;
 }
 
-.highlightContainer {
-    margin: 88px 0px;
+.intro p {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
 }
 
-.linkContainers {
-    display: flex;
-    position: absolute;
-    transform: translate(-50%, 0%);
-    bottom: 64px;
-    left: 50%;
-    gap: 72px;
+.statement {
+  background-color: #f9f9f9;
+  padding: 80px 24px;
+  text-align: center;
+  margin-top: 96px;
 }
 
-.ctaCustomButton {
-    margin-top: 50px;
+.statement h2 {
+  font-size: 36px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  color: var(--text-heading);
 }
 
-.linkContainers a {
-    color: var(--standard-white);
-    border-bottom: 1px solid var(--standard-white);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out;
+.statement p {
+  font-size: 18px;
+  line-height: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--text-dark);
 }
 
-.linkContainers a:hover {
-    color: var(--standard-gold);
-    border-bottom: 1px solid var(--standard-gold);
+.artistBlock {
+  max-width: 800px;
+  margin: 96px auto;
+  padding: 0 24px;
+  text-align: center;
 }
 
-.blogsContainer {
-    margin-top: 96px;
+.artistBlock h2 {
+  font-size: 32px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  color: var(--text-heading);
 }
 
-.sustainableContainer {
-    margin: 96px 40px 0px 40px;
+.artistBlock p {
+  font-size: 18px;
+  line-height: 32px;
+  color: var(--text-dark);
 }
 
-.socialContainer {
-    margin-top: 64px;
+.footerCTA {
+  background-color: #111;
+  color: #fff;
+  padding: 96px 24px;
+  text-align: center;
+  margin-top: 96px;
 }
 
-.socialContentGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+.footerCTA h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
 }
 
-.socialContentGrid img {
-    width: 100%;
-    object-fit: cover;
+.footerCTA p {
+  font-size: 16px;
+  margin-bottom: 16px;
 }
 
-@media (max-width: 800px) {
-    .sustainableContainer {
-        margin: 96px 0px 0px 0px;
-    }
-
-    .socialContentGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .highlightContainer {
-        margin: 88px 0px 40px 0px;
-    }
+.footerCTA .link {
+  font-size: 16px;
+  color: var(--standard-gold);
+  text-decoration: none;
 }

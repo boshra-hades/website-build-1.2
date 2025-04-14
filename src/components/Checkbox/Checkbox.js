@@ -14,7 +14,7 @@ const Checkbox = (props) => {
           name={name}
           data-label={label}
           onChange={(e) => action(e)}
-          checked={isChecked}
+          checked={value}
         />
         <span
           className={`${styles.box} ${styles[size]}`}

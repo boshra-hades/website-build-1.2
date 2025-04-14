@@ -1,136 +1,74 @@
 import * as React from 'react';
-import { Link, navigate } from 'gatsby';
-import Hero from '../components/Hero';
+import { navigate } from 'gatsby';
 import Layout from '../components/Layout/Layout';
-import AttributeGrid from '../components/AttributeGrid';
+import Hero from '../components/Hero';
 import Container from '../components/Container';
 import Title from '../components/Title';
-import ProductCollectionGrid from '../components/ProductCollectionGrid';
 import ProductCardGrid from '../components/ProductCardGrid';
-import Highlight from '../components/Highlight';
 import Quote from '../components/Quote';
-import BlogPreviewGrid from '../components/BlogPreviewGrid';
-import { toOptimizedImage } from '../helpers/general';
 import * as styles from './index.module.css';
 
 const IndexPage = () => {
-  // Replace this with real product data as you prepare your inventory
   const goToShop = () => {
     navigate('/shop');
   };
 
   return (
     <Layout disablePaddingBottom>
-      {/* Hero Section */}
       <Hero
-        maxWidth={'500px'}
-        image={'/banner1.jpg'} 
-        title={'Queer Art Australia'}
-        subtitle={'Handmade Sculptures Crafted with Passion'}
-        ctaText={'View Sculptures'}
-        ctaAction={goToShop}
-      />
+  title={<span className={styles.heroTitle}>Queer Art Australia</span>}
+  subtitle={'Sculpture as memory. Form as resistance.'}
+  ctaText={'Browse Sculptures'}
+  ctaAction={goToShop}
+  image={'/hero.jpg'} // Add your hero image here
+  maxWidth={'700px'}
+/>
 
-      {/* Message Section */}
-      <div className={styles.messageContainer}>
+      <div className={styles.intro}>
         <p>
-          Welcome to <strong>QUEER ART AUSTRALIA</strong> — where every sculpture is a celebration of uniqueness and creative expression.
+          We make art that remembers. Queer Art Australia is not just a studio — it’s a space for
+          queer, trans, and non-binary stories carved in form, texture, and silence.
         </p>
       </div>
 
-      {/* Collection / Featured Sculptures */}
-      <div className={styles.collectionContainer}>
-        <Container size={'large'}>
-          <Title name={'Featured Sculptures'} />
-          <ProductCollectionGrid />
-        </Container>
+      <Container size="large">
+        <Title name="Sculptures" link="/shop" textLink="view all" />
+        <ProductCardGrid spacing={true} columns={3} data={[]} />
+      </Container>
+
+      <div className={styles.statement}>
+        <h2>What We Believe</h2>
+        <p>
+          Each sculpture is handmade with care, rooted in the belief that craft is power, and beauty is resistance.
+          Nothing mass-produced. Nothing impersonal. Everything intentional.
+        </p>
       </div>
 
-      {/* New Arrivals or Latest Sculptures */}
-      <div className={styles.newArrivalsContainer}>
-        <Container>
-          <Title name={'SCULPTURES'} link={'/shop'} textLink={'view all'} />
-          <ProductCardGrid
-            spacing={true}
-            showSlider
-            height={480}
-            columns={3}
-            data={[]} 
-          />
-          {/* Replace [] with your dynamic data when ready */}
-        </Container>
+      <div className={styles.artistBlock}>
+        <h2>About the Artist</h2>
+        <p>
+        Kevin Agopian is a queer Armenian-Lebanese sculptor and tattoo artist whose practice is rooted in transformation, memory, and identity.
+        Each piece is carved by hand in his Naarm/Melbourne studio — where process, silence, and slow intention shape the work as much as material.
+        </p>
+        <p>
+        With a background in community work and performance, Kevin brings lived experience into physical form. His sculptures are not just objects — they’re vessels of resistance, softness, and belonging.
+  
+        </p>
       </div>
 
-      {/* Highlight Section */}
-      <div className={styles.highlightContainer}>
-        <Container size={'large'} fullMobile>
-          <Highlight
-            image={'/2.png'} 
-            altImage={'Highlight Sculpture'}
-            miniImage={'/6.png'}
-            miniImageAlt={'Mini Highlight Sculpture'}
-            title={'Exquisite Detail'}
-            description={
-              'Each sculpture is meticulously crafted, merging traditional technique with avant-garde aesthetics.'
-            }
-            textLink={'Learn More'}
-            link={'/about'}
-          />
-        </Container>
-      </div>
-
-      {/* Promotion / Secondary Hero */}
-      <div className={styles.promotionContainer}>
-        <Hero
-          image={toOptimizedImage('/promotion-banner.jpg')}
-          title={`Exclusive Offer:\nCheck Our Latest Collection`}
-        />
-        <div className={styles.linkContainers}>
-          <Link to={'/shop'}>SHOP NOW</Link>
-        </div>
-      </div>
-
-      {/* Quote / Brand Statement */}
       <Quote
+        title={''}
+        quote={'“We carve space where we were told we didn’t belong.”'}
         bgColor={'var(--standard-light-grey)'}
-        title={'About Queer Art Australia'}
-        quote={'“Art speaks where words are unable to explain.”'}
       />
 
-      {/* Blog / Journal Section */}
-      <div className={styles.blogsContainer}>
-        <Container size={'large'}>
-          <Title name={'Journal'} subtitle={'Insights & Inspirations'} />
-          <BlogPreviewGrid data={[]} />
-          {/* Replace [] with dynamic blog data if available */}
-        </Container>
+      <div className={styles.footerCTA}>
+        <h3>Follow the journey</h3>
+        <p>
+          Get behind-the-scenes looks and drop announcements via Instagram.
+        </p>
+        <a href="https://www.instagram.com/queer_art_australia" className={styles.link}>@queer_art_australia</a>
       </div>
-
-      {/* Additional Promotion Section */}
-      <div className={styles.sustainableContainer}>
-        <Hero
-          image={toOptimizedImage('/sustainable-banner.jpg')}
-          title={'Our Promise'}
-          subtitle={'Committed to ethical creation and sustainable art practices.'}
-          ctaText={'Read More'}
-          maxWidth={'660px'}
-          ctaStyle={styles.ctaCustomButton}
-        />
-      </div>
-
-      {/* Social Media Section */}
-      <div className={styles.socialContainer}>
-        <Title
-          name={'Follow Us'}
-          subtitle={'Get behind-the-scenes looks and latest collection updates on Instagram'}
-        />
-        <div className={styles.socialContentGrid}>
-          <img src={toOptimizedImage(`/social/socialMedia1.jpg`)} alt={'social media 1'} />
-   
-        </div>
-      </div>
-      
-      <AttributeGrid />
     </Layout>
   );
 };

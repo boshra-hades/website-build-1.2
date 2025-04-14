@@ -71,7 +71,7 @@ const Footer = (prop) => {
               <div className={styles.newsLetterContent}>
                 <span className={styles.linkTitle}>Newsletter</span>
                 <p className={styles.promoMessage}>
-                  Get 15% off your first purchase! Plus, be the first to know
+                  Subscribe to be the first to know
                   about sales, new product launches and exclusive offers!
                 </p>
                 <form
@@ -167,14 +167,11 @@ const Footer = (prop) => {
                 )}
               </div>
               <span>
-                {new Date().getFullYear()} (c) . Built by{' '}
+                {new Date().getFullYear()} (c).Built & Powered by{' '}
                 <Button target={true} href="mailto:itcentralhub@outlook.com">
                   BOSHRA
                 </Button>{' '}
-                Powered by{' '}
-                <Button target={true} href="mailto:itcentralhub@outlook.com">
-                  BOSHRA 
-                </Button>
+              
               </span>
             </div>
           </div>

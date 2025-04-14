@@ -3,7 +3,7 @@
     "sculptureCode": "QA001",
     "name": "Emergence",
     "artist": "Kevin Agopian",
-    "price": 2500,
+    "price": 75,
     "alt": "Emergence - front view",
     "image": "/sculptures/Emergence.png",
     "colorOptions": [
@@ -19,7 +19,7 @@
     "sculptureCode": "QA002",
     "name": "Fluidity",
     "artist": "Kevin Agopian",
-    "price": 3200,
+    "price": 75,
     "alt": "Fluidity - front view",
     "image": "/sculptures/Fluidity.png",
     "colorOptions": [
@@ -35,7 +35,7 @@
     "sculptureCode": "QA003",
     "name": "Radiance",
     "artist": "Kevin Agopian",
-    "price": 2800,
+    "price": 75,
     "alt": "Radiance - front view",
     "image": "/sculptures/Radiance.png",
     "colorOptions": [
@@ -51,7 +51,7 @@
     "sculptureCode": "QA004",
     "name": "Resilience",
     "artist": "Kevin Agopian",
-    "price": 3000,
+    "price": 75,
     "alt": "Resilience - front view",
     "image": "/sculptures/Resilience.png",
     "colorOptions": [
@@ -67,7 +67,7 @@
     "sculptureCode": "QA005",
     "name": "Luminescence",
     "artist": "Kevin Agopian",
-    "price": 2600,
+    "price": 75,
     "alt": "Luminescence - full view",
     "image": "/sculptures/Luminescence.png",
     "colorOptions": [
@@ -90,7 +90,7 @@
     "sculptureCode": "QA006",
     "name": "Vibrance",
     "artist": "Kevin Agopian",
-    "price": 3100,
+    "price": 75,
     "alt": "Vibrance - full view",
     "image": "/sculptures/Vibrance.png",
     "colorOptions": [
@@ -113,7 +113,7 @@
     "sculptureCode": "QA007",
     "name": "Ethereal",
     "artist": "Kevin Agopian",
-    "price": 2950,
+    "price": 75,
     "alt": "Ethereal - full view",
     "image": "/sculptures/Ethereal.png",
     "colorOptions": [
@@ -129,7 +129,7 @@
     "sculptureCode": "QA008",
     "name": "Continuum",
     "artist": "Kevin Agopian",
-    "price": 3400,
+    "price": 75,
     "alt": "Continuum - full view",
     "image": "/sculptures/Continuum.png",
     "colorOptions": [
@@ -145,7 +145,7 @@
     "sculptureCode": "QA009",
     "name": "Solstice",
     "artist": "Kevin Agopian",
-    "price": 3300,
+    "price": 75,
     "alt": "Solstice - full view",
     "image": "/sculptures/Solstice.png",
     "colorOptions": [

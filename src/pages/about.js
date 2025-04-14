@@ -22,80 +22,50 @@ const AboutPage = () => {
 
   return (
     <Layout disablePaddingBottom>
-      <div className={styles.root}>
-        {/* Hero Section */}
-        <Hero
-          maxWidth={'900px'}
-          image={'/about.png'}  // Replace with your desired about-page hero image in the static folder
-          title={`QUEER ART AUSTRALIA \n since 2019`}
-        />
-
-        <div className={styles.navContainer}>
-          <ThemeLink onClick={() => handleScroll(historyRef)} to={'#history'}>
-            History
-          </ThemeLink>
-          <ThemeLink onClick={() => handleScroll(valuesRef)} to={'#values'}>
-            Values
-          </ThemeLink>
-          <ThemeLink onClick={() => handleScroll(sustainabilityRef)} to={'#sustainability'}>
-            Sustainability
-          </ThemeLink>
-        </div>
-
-        <Container size={'large'} spacing={'min'}>
-          {/* History Section */}
-          <div className={styles.detailContainer} ref={historyRef}>
-            <p>
-              Queer Art Australia began as a personal journey in embracing authentic
-              self-expression and creative freedom. Founded by a passionate artist from the queer community, our sculptures are lovingly
-              handcrafted—from raw materials to expressive forms—that capture the essence of transformation and identity.
-              Each piece is a vivid celebration of queer, trans, and non-binary experiences, inviting you to experience art that challenges traditional boundaries and honors diversity.
-            </p>
-          </div>
-        </Container>
-
-        <div className={styles.imageContainer}>
-          <img alt={'studio or sculpture work'} src={toOptimizedImage('/about1.png')} />
-        </div>
-
-        <Container size={'large'} spacing={'min'}>
-          <div className={styles.content}>
-            {/* Values Section */}
-            <h3>Our Values</h3>
-            <div ref={valuesRef}>
-              <p>
-                At Queer Art Australia, our values guide every stroke and chisel mark.
-                We celebrate authenticity by honoring each unique identity and creating art that resonates with our vibrant community.
-                Our commitment to handcrafted excellence means every sculpture is made with meticulous care,
-                ensuring that art becomes a personal expression of strength, resilience, and beauty.
-              </p>
-              <ol>
-                <li>Handcrafted Excellence</li>
-                <li>Diverse & Inclusive Expression</li>
-                <li>Sustainable & Ethical Practice</li>
-              </ol>
-              <img alt={'Founder or artistic process'} src={toOptimizedImage('/about2.png')} />
-            </div>
-
-            {/* Sustainability Section */}
-            <h3>Sustainability</h3>
-            <div id={'sustainability'} ref={sustainabilityRef}>
-              <p>
-                Our artistry is deeply rooted in responsibility.
-                We use ethically sourced, natural materials and environmentally conscious methods
-                that not only ensure the quality of our sculptures but also reflect a commitment
-                to preserving our planet. Every piece is crafted with a dedication to sustainable innovation,
-                ensuring that our art honors both the spirit of the queer community and the natural world.
-              </p>
-            </div>
-          </div>
-        </Container>
-
-        <div className={styles.imageContainer}>
-          <img alt={'artistic view'} src={toOptimizedImage('/about3.png')} />
-        </div>
+  <div className={styles.root}>
+    <div className={styles.section}>
+      <h2>Our Story</h2>
+      <p>
+        Queer Art Australia began as a deeply personal exploration of identity, transformation, and self-expression.
+        Founded in 2019 by Kevin Agopian, each sculpture is an homage to the queer, trans, and non-binary experience —
+        raw, intentional, and unapologetically honest.
+      </p>
+      <div className={styles.quote}>
+        “We believe art should not just be seen — it should be felt.”
       </div>
-    </Layout>
+    </div>
+
+    <div className={styles.section}>
+      <h2>Values That Shape Us</h2>
+      <p>
+        Our work is grounded in three principles: authenticity, craft, and care.
+        Every piece is made by hand — no shortcuts, no compromises. The result is work that carries soul, texture, and truth.
+      </p>
+      <p>
+        We honor individuality. Every body, every voice, every identity has space here.
+        This isn't just about sculpture — it's about visibility, empowerment, and shared stories.
+      </p>
+    </div>
+    
+    <div className={styles.imageRow}>
+  <img src={toOptimizedImage('/Resilience.png')} alt="Sculpture 1" />
+  <img src={toOptimizedImage('/VibranceBack.png')} alt="Sculpture 2" />
+</div>
+<div className={styles.caption}>
+  Hand-carved works from the 2025 transformation series
+</div>
+
+
+    <div className={styles.section}>
+      <h2>Crafting with Care</h2>
+      <p>
+      We don't claim perfection — but we do act with purpose. From the materials we choose to the methods we refine, our studio practices are shaped by an ongoing commitment to care: for the art, for the people who engage with it, and for the world that holds us all. 
+      We prioritise quality over quantity, long-term over disposable, and continue to learn how to do better — with humility and intention.
+      </p>
+    </div>
+  </div>
+</Layout>
+
   );
 };
 

@@ -16,11 +16,12 @@ const ProductCard = (props) => {
     originalPrice,
     meta,
     showQuickView,
-    height = 580,
+    height = 580
   } = props;
 
   const handleRouteToProduct = () => {
-    navigate('/product/sample');
+    const slug = name.toLowerCase().replace(/\s+/g, '-');
+    navigate(`/product/${slug}`);
   };
 
   const handleQuickView = (e) => {
@@ -37,29 +38,33 @@ const ProductCard = (props) => {
     <div className={styles.root}>
       <div
         className={styles.imageContainer}
-        onClick={() => handleRouteToProduct()}
-        role={'presentation'}
+        onClick={handleRouteToProduct}
+        role="presentation"
       >
-        <img style={{ height: `${height}px` }} src={toOptimizedImage(image)} alt={imageAlt}></img>
+        <img
+          style={{ height: `${height}px` }}
+          src={toOptimizedImage(image)}
+          alt={imageAlt}
+        />
         <div
           className={styles.bagContainer}
-          role={'presentation'}
-          onClick={(e) => handleQuickView(e)}
+          role="presentation"
+          onClick={handleQuickView}
         >
           <Icon symbol={'bagPlus'} />
         </div>
         <div
           className={styles.heartContainer}
-          role={'presentation'}
-          onClick={(e) => handleFavorite(e)}
+          role="presentation"
+          onClick={handleFavorite}
         >
           <Icon symbol={'heart'} />
           <div
             className={`${styles.heartFillContainer} ${
-              isWishlist === true ? styles.show : styles.hide
+              isWishlist ? styles.show : styles.hide
             }`}
           >
-            <Icon symbol={'heartFill'}></Icon>
+            <Icon symbol={'heartFill'} />
           </div>
         </div>
       </div>
@@ -67,13 +72,15 @@ const ProductCard = (props) => {
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>
           <span
-            className={`${originalPrice !== undefined ? styles.salePrice : ''}`}
+            className={`${
+              originalPrice !== undefined ? styles.salePrice : ''
+            }`}
           >
-            <CurrencyFormatter amount={price}></CurrencyFormatter>
+            <CurrencyFormatter amount={price} />
           </span>
           {originalPrice && (
             <span className={styles.originalPrice}>
-              <CurrencyFormatter amount={originalPrice}></CurrencyFormatter>
+              <CurrencyFormatter amount={originalPrice} />
             </span>
           )}
         </div>
