@@ -15,6 +15,24 @@
 
 /* Variables */
 :root {
+
+  /* ✨ Bold Queer-Inspired Colors */
+--color-primary: #DA3E8C;         /* Bold Pink */
+--color-secondary: #F7D900;       /* Bright Yellow */
+--color-tertiary: #54BDF1;        /* Sky Blue */
+--color-accent: #7D3FFF;          /* Electric Purple */
+--color-deep-red: #D72638;        /* Statement Red */
+
+/* Text & Background Themes */
+--bg-base: #FCFAFF;               /* Soft Off-White */
+--text-heading: #1C1C1C;          /* Rich Black */
+--text-body: #3D3D3D;             /* Neutral Body Text */
+--border-soft: #E9D8FF;           /* Soft Pastel Border */
+
+/* Button Theme */
+--button-bg: var(--color-primary);
+--button-hover: #C12776;
+
   --space1: 3px;
   --space2: 5px;
   --space3: 8px;

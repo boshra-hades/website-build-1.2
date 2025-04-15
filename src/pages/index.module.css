@@ -1,137 +1,45 @@
-.intro, .statement, .footerCTA {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 48px 24px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 32px;
-  color: var(--text-dark);
-}
-
-.intro p, .statement p {
-  margin-top: 16px;
-}
-
-.statement h2 {
-  font-size: 28px;
-  font-weight: 500;
-  margin-bottom: 12px;
-}
+/* src/pages/index.module.css */
 
 .artistSection {
-  max-width: 800px;
-  margin: 96px auto;
-  padding: 0 24px;
-  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #f3f0ea;
 }
 
-.artistSection h2 {
-  font-size: 32px;
-  line-height: 42px;
-  font-weight: 500;
-  margin-bottom: 24px;
-  color: var(--text-heading);
-}
-
-.artistSection p {
-  font-size: 18px;
-  line-height: 32px;
-  color: var(--text-dark);
-  margin-bottom: 24px;
-}
-
-/* Refined hero section appearance */
-.heroTitle {
-  font-family: var(--standard-header);
-  font-size: 48px;
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--text-heading);
-  letter-spacing: -0.5px;
-}
-
-/* Optional: control max height of hero image to avoid overflow */
-.heroImage {
-  max-height: 600px;
-  object-fit: cover;
-  width: 100%;
-}
-
-.intro {
-  max-width: 800px;
-  margin: 64px auto;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.intro p {
-  font-size: 18px;
-  line-height: 32px;
-  color: var(--text-dark);
-}
-
-.statement {
-  background-color: #f9f9f9;
-  padding: 80px 24px;
-  text-align: center;
-  margin-top: 96px;
-}
-
-.statement h2 {
-  font-size: 36px;
-  margin-bottom: 24px;
-  font-weight: 500;
-  color: var(--text-heading);
-}
-
-.statement p {
-  font-size: 18px;
-  line-height: 32px;
+.bioText {
+  font-size: 1.1rem;
   max-width: 700px;
-  margin: 0 auto;
-  color: var(--text-dark);
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  color: #333;
 }
 
-.artistBlock {
-  max-width: 800px;
-  margin: 96px auto;
-  padding: 0 24px;
-  text-align: center;
+.quote {
+  font-style: italic;
+  border-left: 4px solid #d6c8b0;
+  padding-left: 1rem;
+  max-width: 700px;
+  color: #5a5241;
 }
 
-.artistBlock h2 {
-  font-size: 32px;
-  margin-bottom: 16px;
-  font-weight: 500;
-  color: var(--text-heading);
+.productsSection {
+  padding: 4rem 1rem;
+  background-color: #fffaf6;
 }
 
-.artistBlock p {
-  font-size: 18px;
-  line-height: 32px;
-  color: var(--text-dark);
+.buttonWrapper {
+  margin-top: 2rem;
 }
 
-.footerCTA {
-  background-color: #111;
-  color: #fff;
-  padding: 96px 24px;
-  text-align: center;
-  margin-top: 96px;
-}
-
-.footerCTA h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.footerCTA p {
-  font-size: 16px;
-  margin-bottom: 16px;
-}
-
-.footerCTA .link {
-  font-size: 16px;
-  color: var(--standard-gold);
+.viewAllButton {
   text-decoration: none;
+  background-color: #c4a484;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.viewAllButton:hover {
+  background-color: #a78a6b;
 }
