@@ -1,6 +1,6 @@
 // src/pages/index.js
 import * as React from 'react';
-import { Link, navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout/Layout';
 import AttributeGrid from '../components/AttributeGrid';
@@ -14,24 +14,40 @@ const IndexPage = () => {
     <Layout disablePaddingBottom>
       {/* Hero Section */}
       <Hero
-        maxWidth={'500px'}
-        image={'/queer-art-hero.jpg'}
-        title={'Queer Art Australia'}
-        subtitle={'Handmade, sculptural, and unapologetically queer'}
+        image="/queer-art-hero.jpg"
+        maxWidth="800px"
+        title="QUEER. HANDMADE. UNAPOLOGETIC."
+        subtitle="Every object tells a story. This is ours."
+        ctaLink="View Collection"
+        ctaTo="/shop"
       />
 
-      {/* Artist Bio Section */}
+      {/* Artist Bio + Process Section */}
       <section className={styles.artistSection}>
         <Container>
-          <Title as="h2">Meet the Artist</Title>
-          <p className={styles.bioText}>
-            Kevin Agopian is a queer sculptor and multidisciplinary artist. His work moves between clay, text,
-            and memory — a tender confrontation with form, identity, and the spaces we inhabit.
-            Each piece is carved by hand in his Naarm/Melbourne studio — where process, silence, and slow intention shape the work as much as material.
-          </p>
-          <blockquote className={styles.quote}>
-            “To be queer is to reshape the world in your own image — sculpture is how I carve truth into presence.”
-          </blockquote>
+          <div className={styles.artistGrid}>
+            <div>
+            <h3 className={styles.processTitle}>Meet the Artist</h3>
+              <p className={styles.bioText}>
+                Kevin Agopian is a queer sculptor and multidisciplinary artist. His work moves between clay, text,
+                and memory — a tender confrontation with form, identity, and the spaces we inhabit.
+                Each piece is carved by hand in his Naarm/Melbourne studio — where process, silence, and slow intention shape the work as much as material.
+              </p>
+              <blockquote className={styles.quote}>
+                “To be queer is to reshape the world in your own image — sculpture is how I carve truth into presence.”
+              </blockquote>
+            </div>
+            <div className={styles.processBlock}>
+              <h3 className={styles.processTitle}>In the Studio</h3>
+              <ul className={styles.processList}>
+                <li>✶ Red clay under fingernails</li>
+                <li>✶ Silence before shaping</li>
+                <li>✶ Sculpting by touch, not plan</li>
+                <li>✶ Glazes inspired by bruises, light, breath</li>
+                <li>✶ Queer mythos in every curve</li>
+              </ul>
+            </div>
+          </div>
         </Container>
       </section>
 
@@ -39,29 +55,29 @@ const IndexPage = () => {
       <section className={styles.productsSection}>
         <Container>
           <Title as="h2">Featured Pieces</Title>
-          
+
           <ProductCardGrid
-  products={[
-    {
-      title: 'Hand-formed Clay Vessel',
-      image: '/products/vessel.jpg',
-      price: '$75',
-      slug: '/product/hand-formed-clay-vessel',
-    },
-    {
-      title: 'Textured Body Sculpture',
-      image: '/products/sculpture.jpg',
-      price: '$75',
-      slug: '/product/textured-body-sculpture',
-    },
-    {
-      title: 'Queer Totem Set',
-      image: '/products/totem.jpg',
-      price: '$75',
-      slug: '/product/queer-totem-set',
-    },
-  ]}
-/>
+            data={[
+              {
+                name: 'Vibrance',
+                image: '/vessel.jpg',
+                price: '75',
+                Link: '/product/hand-formed-clay-vessel',
+              },
+              {
+                name: 'Fluidity',
+                image: '/sculpture.jpg',
+                price: '75',
+                Link: '/product/textured-body-sculpture',
+              },
+              {
+                name: 'Resilience',
+                image: '/totem.jpg',
+                price: '75',
+                Link: '/product/queer-totem-set',
+              },
+            ]}
+          />
           <div className={styles.buttonWrapper}>
             <Link to="/shop" className={styles.viewAllButton}>
               View All Products

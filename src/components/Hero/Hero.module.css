@@ -1,84 +1,111 @@
-.root {
-    width: 100%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 80vh;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--standard-white);
+.heroWrapper {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--standard-white);
-    max-width: 500px;
-    gap: 40px;
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: 1;
 }
 
-.title {
-    font-size: 72px;
-    line-height: 86px;
-    font-weight: normal;
-    text-align: center;
-    white-space: pre-wrap;
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-.subtitle {
-    
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    text-align: center;
+/* ✅ This ensures proper centering */
+.heroContentWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ctaButton {
-    width: 180px;
-    
+/* ✅ Locks the text block centrally */
+.heroTextBlock {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  color: white;
+  padding: 1rem;
 }
 
-.ctaLink {
-    
-    text-transform: uppercase;
-    color: var(--standard-white);
-    border-bottom: 1px solid var(--standard-white);
-
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
+/* Text styles */
+.heroTitle {
+  font-family: 'Inria Serif', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: white;
 }
 
-.header {
-    color: var(--standard-white);
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    text-transform: uppercase;
+.heroSubtitle {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+  font-weight: 400;
+  color: #f0eae2;
 }
 
-@media (max-width: 800px) {
-    .root {
-        min-height: 50vh;
-    }
-
-    .title {
-        font-size: 42px;
-        line-height: 50px;
-    }
-
-    .subtitle {
-        font-size: 14px;
-        line-height: 17px;
-    }
+.heroIntro {
+  font-size: 0.95rem;
+  color: #e4dcd3;
+  font-style: italic;
+  margin-bottom: 1rem;
 }
 
-@media (max-width: 500px) {
-    .content {
-        padding: 0px 32px;
-    }
+.heroDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.heroTag {
+  font-size: 1rem;
+  color: #e4dcd3;
+}
+
+.heroButton {
+  background-color: #c4a484;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.heroButton:hover {
+  background-color: #a78a6b;
+}
+
+.scrollCue {
+  margin-top: 2rem;
+  font-size: 2rem;
+  color: #e4dcd3;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
 }
