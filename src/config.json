@@ -24,10 +24,12 @@
       ]
     }
   ],
-  "headerLinks": [
-    { "menuLabel": "Sculptures", "menuLink": "/shop", "category": null },
-    { "menuLabel": "About", "menuLink": "/about", "category": null }
-  ],
+ "headerLinks": [
+  { "menuLabel": "Home", "menuLink": "/", "category": null },
+  { "menuLabel": "Sculptures", "menuLink": "/shop", "category": null },
+  { "menuLabel": "About", "menuLink": "/about", "category": null }
+]
+,
   "filters": [
     {
       "category": "Colour",

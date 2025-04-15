@@ -24,9 +24,9 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  will-change: transform; /* ✅ Helps GPU animate the zoom smoothly */
 }
 
-/* ✅ This ensures proper centering */
 .heroContentWrapper {
   position: relative;
   z-index: 2;
@@ -39,7 +39,6 @@
   align-items: center;
 }
 
-/* ✅ Locks the text block centrally */
 .heroTextBlock {
   text-align: center;
   max-width: 800px;
@@ -48,7 +47,6 @@
   padding: 1rem;
 }
 
-/* Text styles */
 .heroTitle {
   font-family: 'Inria Serif', serif;
   font-size: 3.5rem;

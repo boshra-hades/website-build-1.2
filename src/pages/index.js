@@ -1,9 +1,10 @@
 // src/pages/index.js
 import * as React from 'react';
 import { Link } from 'gatsby';
+import { motion } from 'framer-motion';
+
 import Hero from '../components/Hero';
 import Layout from '../components/Layout/Layout';
-import AttributeGrid from '../components/AttributeGrid';
 import Container from '../components/Container';
 import Title from '../components/Title';
 import ProductCardGrid from '../components/ProductCardGrid';
@@ -23,7 +24,13 @@ const IndexPage = () => {
       />
 
       {/* Artist Bio + Process Section */}
-      <section className={styles.artistSection}>
+      <motion.section
+        className={styles.artistSection}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: false, amount: 0.4 }}
+      >
         <Container>
           <div className={styles.artistGrid}>
             <div>
@@ -49,13 +56,18 @@ const IndexPage = () => {
             </div>
           </div>
         </Container>
-      </section>
+      </motion.section>
 
       {/* Featured Products Section */}
-      <section className={styles.productsSection}>
+      <motion.section
+        className={styles.productsSection}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        viewport={{ once: false, amount: 0.4 }}
+      >
         <Container>
-          <Title as="h2">Featured Pieces</Title>
-
+        <h3 className={styles.processTitle}>Feartured Pieces</h3>
           <ProductCardGrid
             data={[
               {
@@ -84,7 +96,7 @@ const IndexPage = () => {
             </Link>
           </div>
         </Container>
-      </section>
+      </motion.section>
     </Layout>
   );
 };
