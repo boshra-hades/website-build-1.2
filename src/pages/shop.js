@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import * as styles from './shop.module.css';
 
 import Accordion from '../components/Accordion';
-import Banner from '../components/Banner';
-import Breadcrumbs from '../components/Breadcrumbs';
 import Checkbox from '../components/Checkbox';
 import Container from '../components/Container';
 import Layout from '../components/Layout/Layout';
@@ -44,58 +42,70 @@ const ShopV2Page = () => {
   return (
     <Layout>
       <div className={styles.root}>
-        <Container size={'large'} spacing={'min'}>
-          <Breadcrumbs
-            crumbs={[{ link: '/', label: 'Home' }, { label: 'Sculptures' }]}
-          />
-        </Container>
-        <Banner
-          maxWidth={'650px'}
-          name={`Sculptures`}
-          subtitle={
-            'Explore our handcrafted clay sculptures that celebrate queer identity and creative expression.'
-          }
-        />
+        <header className={styles.pageHeader}>
+          <h1>Sculptures</h1>
+          <p>
+            Explore our handcrafted clay sculptures that celebrate queer identity and
+            creative expression.
+          </p>
+        </header>
+
         <Container size={'large'} spacing={'min'}>
           <div className={styles.content}>
-            <div className={styles.filterContainer}>
+            <aside className={styles.filterContainer}>
               {filterState.map((category, categoryIndex) => (
-                <div key={categoryIndex}>
-                  <Accordion customStyle={styles} title={category.category}>
-                    {category.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className={styles.filters}>
-                        <Checkbox
-                          size={'sm'}
-                          action={(e) => filterTick(e, categoryIndex, itemIndex)}
-                          label={item.name}
-                          isChecked={item.value}
-                          id={item.name}
-                          name={item.name}
-                        />
-                      </div>
-                    ))}
-                  </Accordion>
-                </div>
+                <Accordion key={categoryIndex} customStyle={styles} title={category.category}>
+                  {category.items.map((item, itemIndex) => (
+                    <div key={itemIndex} className={styles.filters}>
+                      <Checkbox
+                        size="sm"
+                        action={(e) => filterTick(e, categoryIndex, itemIndex)}
+                        label={item.name}
+                        isChecked={item.value}
+                        id={item.name}
+                        name={item.name}
+                      />
+                    </div>
+                  ))}
+                </Accordion>
               ))}
               <div style={{ marginTop: '16px' }}>
-                <Button level="primary" fullWidth onClick={handleFilterApply}>
-                  View Items
-                </Button>
-              </div>
-            </div>
+              <Button level="primary" fullWidth onClick={handleFilterApply}>
+  APPLY FILTERS
+</Button>
 
-            <div>
-              <div className={styles.metaContainer}>
-                <span className="standardSpan">{filteredProducts.length} items</span>
+{filterState.some(cat => cat.items.some(i => i.value)) && (
+  <button
+    className={styles.clearButton}
+    onClick={() => {
+      const resetFilters = filterState.map(cat => ({
+        ...cat,
+        items: cat.items.map(i => ({ ...i, value: false }))
+      }));
+      setFilterState(resetFilters);
+      setFilteredProducts(products);
+    }}
+  >
+    Clear Filters
+  </button>
+)}
+
               </div>
-              <ProductCardGrid height={'440px'} data={filteredProducts} />
-            </div>
+            </aside>
+
+            <section style={{ flex: 1 }}>
+              <div className={styles.metaContainer}>
+                <span>{filteredProducts.length} items</span>
+              </div>
+              <ProductCardGrid height="440px" data={filteredProducts} />
+            </section>
           </div>
+
           <div className={styles.loadMoreContainer}>
-            <span>Showing {filteredProducts.length} of {products.length}</span>
-            <Button fullWidth level={'secondary'}>
-              LOAD MORE
-            </Button>
+            <span>
+              Showing {filteredProducts.length} of {products.length}
+            </span>
+            <Button fullWidth level="secondary">LOAD MORE</Button>
           </div>
         </Container>
       </div>

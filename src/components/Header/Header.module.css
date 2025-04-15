@@ -71,13 +71,22 @@
   text-transform: uppercase;
   color: var(--standard-black);
   font-weight: 500;
-  padding-bottom: 50px;
+  padding-bottom: 6px;
   font-size: 12px;
   line-height: 15px;
   border-bottom: 2px solid transparent;
   transition: border 0.3s ease-in-out;
-  width: 100%;
+  text-decoration: none;
 }
+
+.navLink:hover {
+  border-bottom: 2px solid #c4a484; /* warm earthy tone */
+}
+
+.activeLink {
+  border-bottom: 2px solid var(--standard-black);
+}
+
 
 .activeLink {
   border-bottom: 2px solid var(--standard-black);

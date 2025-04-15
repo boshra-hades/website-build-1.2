@@ -11,6 +11,7 @@ import Drawer from '../Drawer';
 import ExpandedMenu from '../ExpandedMenu';
 import FormInputField from '../FormInputField/FormInputField';
 import Icon from '../Icons/Icon';
+import { useLocation } from '@reach/router';
 import MiniCart from '../MiniCart';
 import MobileNavigation from '../MobileNavigation';
 import * as styles from './Header.module.css';
@@ -25,7 +26,7 @@ const Header = (prop) => {
 
   const [showSearch, setShowSearch] = useState(false);
   const [search, setSearch] = useState('');
-
+  const location = useLocation();
   const searchRef = createRef();
   const bannerMessage = 'Support your local business';
   const searchSuggestions = [
@@ -89,17 +90,17 @@ const Header = (prop) => {
               }}
             >
               {Config.headerLinks.map((navObject) => (
-                <Link
-                  key={navObject.menuLink}
-                  onMouseEnter={() => handleHover(navObject)}
-                  className={`${styles.navLink} ${
-                    activeMenu === navObject.menuLabel ? styles.activeLink : ''
-                  }`}
-                  to={navObject.menuLink}
-                >
-                  {navObject.menuLabel}
-                </Link>
-              ))}
+  <Link
+    key={navObject.menuLink}
+    onMouseEnter={() => handleHover(navObject)}
+    className={`${styles.navLink} ${
+      location.pathname === navObject.menuLink ? styles.activeLink : ''
+    }`}
+    to={navObject.menuLink}
+  >
+    {navObject.menuLabel}
+  </Link>
+))}
             </nav>
           </div>
           <div
