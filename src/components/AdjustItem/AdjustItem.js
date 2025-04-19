@@ -1,47 +1,41 @@
-import React, { useState } from 'react';
-
+import React from 'react';
 import Icon from '../Icons/Icon';
 import * as styles from './AdjustItem.module.css';
 
-const AdjustItem = (props) => {
-  const { isTransparent } = props;
-  const [qty, setQty] = useState(1);
+const AdjustItem = ({ quantity = 1, productId, onQuantityChange, isTransparent }) => {
+  const handleChange = (e) => {
+    const newQty = parseInt(e.target.value, 10);
+    if (!isNaN(newQty) && newQty > 0) {
+      onQuantityChange?.(productId, newQty);
+    }
+  };
 
-  const handleOnChange = (e) => {
-    const num = parseInt(e.target.value);
-    setQty(num);
+  const handleIncrement = () => {
+    onQuantityChange?.(productId, quantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      onQuantityChange?.(productId, quantity - 1);
+    }
   };
 
   return (
-    <div
-      className={`${styles.root} ${
-        isTransparent === true ? styles.transparent : ''
-      }`}
-    >
-      <div
-        className={styles.iconContainer}
-        role={'presentation'}
-        onClick={() => {
-          if (qty <= 1) return;
-          setQty(qty - 1);
-        }}
-      >
-        <Icon symbol={'minus'}></Icon>
+    <div className={`${styles.root} ${isTransparent ? styles.transparent : ''}`}>
+      <div className={styles.iconContainer} role="presentation" onClick={handleDecrement}>
+        <Icon symbol="minus" />
       </div>
       <div className={styles.inputContainer}>
         <input
-          className={`${isTransparent === true ? styles.transparentInput : ''}`}
-          onChange={(e) => handleOnChange(e)}
-          type={'number'}
-          value={qty}
-        ></input>
+          type="number"
+          value={quantity}
+          onChange={handleChange}
+          className={isTransparent ? styles.transparentInput : ''}
+          min={1}
+        />
       </div>
-      <div
-        role={'presentation'}
-        onClick={() => setQty(qty + 1)}
-        className={styles.iconContainer}
-      >
-        <Icon symbol={'plus'}></Icon>
+      <div className={styles.iconContainer} role="presentation" onClick={handleIncrement}>
+        <Icon symbol="plus" />
       </div>
     </div>
   );

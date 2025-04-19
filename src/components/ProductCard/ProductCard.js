@@ -15,18 +15,13 @@ const ProductCard = (props) => {
     price,
     originalPrice,
     meta,
-    showQuickView,
     height = 580
   } = props;
 
-  const handleRouteToProduct = () => {
-    const slug = name.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/product/${slug}`);
-  };
+  const slug = name.toLowerCase().replace(/\s+/g, '-');
 
-  const handleQuickView = (e) => {
-    e.stopPropagation();
-    showQuickView();
+  const handleRouteToProduct = () => {
+    navigate(`/product/${slug}`);
   };
 
   const handleFavorite = (e) => {
@@ -46,28 +41,33 @@ const ProductCard = (props) => {
           src={toOptimizedImage(image)}
           alt={imageAlt}
         />
+
+        {/* Replaced Bag Icon click with link to product */}
         <div
           className={styles.bagContainer}
           role="presentation"
-          onClick={handleQuickView}
+          onClick={handleRouteToProduct}
+          title="View Product"
         >
-          <Icon symbol={'bagPlus'} />
+          <Icon symbol="bagPlus" />
         </div>
+
         <div
           className={styles.heartContainer}
           role="presentation"
           onClick={handleFavorite}
         >
-          <Icon symbol={'heart'} />
+          <Icon symbol="heart" />
           <div
             className={`${styles.heartFillContainer} ${
               isWishlist ? styles.show : styles.hide
             }`}
           >
-            <Icon symbol={'heartFill'} />
+            <Icon symbol="heartFill" />
           </div>
         </div>
       </div>
+
       <div className={styles.detailsContainer}>
         <span className={styles.productName}>{name}</span>
         <div className={styles.prices}>

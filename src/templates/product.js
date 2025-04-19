@@ -8,7 +8,6 @@ import Breadcrumbs from '../components/Breadcrumbs';
 import Container from '../components/Container';
 import CurrencyFormatter from '../components/CurrencyFormatter';
 import Gallery from '../components/Gallery';
-import Split from '../components/Split';
 import Layout from '../components/Layout/Layout';
 import Icon from '../components/Icons/Icon';
 import ProductCardGrid from '../components/ProductCardGrid';
@@ -21,8 +20,8 @@ const ProductPage = ({ pageContext }) => {
   const ctxAddItemNotification = useContext(AddItemNotificationContext);
   const showNotification = ctxAddItemNotification.showNotification;
 
-  const sampleProduct = products.find((prod) =>
-    prod.name.toLowerCase().replace(/\s+/g, '-') === slug
+  const sampleProduct = products.find(
+    (prod) => prod.name.toLowerCase().replace(/\s+/g, '-') === slug
   ) || {};
 
   const [qty, setQty] = useState(1);
@@ -32,6 +31,32 @@ const ProductPage = ({ pageContext }) => {
     .filter((prod) => prod.name !== sampleProduct.name)
     .slice(0, 4);
 
+  const handleAddToCart = () => {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const existingIndex = cart.findIndex(
+      (item) => item.id === sampleProduct.id || item.slug === slug
+    );
+
+    if (existingIndex >= 0) {
+      cart[existingIndex].quantity += qty;
+    } else {
+      cart.push({
+        id: sampleProduct.id || slug,
+        name: sampleProduct.name,
+        price: sampleProduct.price,
+        image: sampleProduct.image,
+        alt: sampleProduct.alt,
+        quantity: qty,
+        slug,
+      });
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+    showNotification();
+    window.dispatchEvent(new Event('storage'));
+  };
+
   return (
     <Layout>
       <div className={styles.root}>
@@ -40,7 +65,7 @@ const ProductPage = ({ pageContext }) => {
             crumbs={[
               { link: '/', label: 'Home' },
               { label: 'Sculptures', link: '/shop' },
-              { label: sampleProduct.name }
+              { label: sampleProduct.name },
             ]}
           />
           <div className={styles.content}>
@@ -49,7 +74,9 @@ const ProductPage = ({ pageContext }) => {
                 <Gallery images={sampleProduct.views} />
               ) : (
                 <Gallery
-                  images={[{ image: sampleProduct.image, alt: sampleProduct.alt }]}
+                  images={[
+                    { image: sampleProduct.image, alt: sampleProduct.alt },
+                  ]}
                 />
               )}
             </div>
@@ -65,11 +92,7 @@ const ProductPage = ({ pageContext }) => {
               </div>
               <div className={styles.actionContainer}>
                 <div className={styles.addToButtonContainer}>
-                  <Button
-                    onClick={() => showNotification()}
-                    fullWidth
-                    level={'primary'}
-                  >
+                  <Button onClick={handleAddToCart} fullWidth level={'primary'}>
                     Add to Bag
                   </Button>
                 </div>
@@ -98,17 +121,23 @@ const ProductPage = ({ pageContext }) => {
                   customStyle={styles}
                   title={'composition & care'}
                 >
-                  <p className={styles.information}>{sampleProduct.description}</p>
+                  <p className={styles.information}>
+                    {sampleProduct.description}
+                  </p>
                 </Accordion>
                 <Accordion
                   type={'plus'}
                   customStyle={styles}
                   title={'delivery & returns'}
                 >
-                  <p className={styles.information}>{sampleProduct.description}</p>
+                  <p className={styles.information}>
+                    {sampleProduct.description}
+                  </p>
                 </Accordion>
                 <Accordion type={'plus'} customStyle={styles} title={'help'}>
-                  <p className={styles.information}>{sampleProduct.description}</p>
+                  <p className={styles.information}>
+                    {sampleProduct.description}
+                  </p>
                 </Accordion>
               </div>
             </div>
@@ -124,11 +153,9 @@ const ProductPage = ({ pageContext }) => {
             />
           </div>
         </Container>
-      
       </div>
     </Layout>
   );
 };
 
 export default ProductPage;
-
