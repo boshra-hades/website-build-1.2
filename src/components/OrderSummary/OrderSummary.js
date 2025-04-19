@@ -7,14 +7,13 @@ import CurrencyFormatter from '../CurrencyFormatter';
 
 import * as styles from './OrderSummary.module.css';
 
-const OrderSummary = ({ cartItems = [] }) => {
+const OrderSummary = ({ cartItems = [], shippingCost = 0, paymentMethod = 'cash' }) => {
   const [coupon, setCoupon] = useState('');
   const [giftCard, setGiftCard] = useState('');
 
-  // ✨ Calculate subtotal
-  const subtotal = cartItems.reduce((sum, item) => {
-    return sum + item.price * item.quantity;
-  }, 0);
+  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const gst = subtotal * 0.1;
+  const total = subtotal + gst + shippingCost;
 
   const hasItems = cartItems.length > 0;
 
@@ -26,19 +25,15 @@ const OrderSummary = ({ cartItems = [] }) => {
         <div className={styles.calculationContainer}>
           <div className={styles.labelContainer}>
             <span>Subtotal</span>
-            <span>
-              <CurrencyFormatter amount={subtotal} appendZero />
-            </span>
+            <span><CurrencyFormatter amount={subtotal} appendZero /></span>
+          </div>
+          <div className={styles.labelContainer}>
+            <span>GST (10%)</span>
+            <span><CurrencyFormatter amount={gst} appendZero /></span>
           </div>
           <div className={styles.labelContainer}>
             <span>Shipping</span>
-            <span>---</span>
-          </div>
-          <div className={styles.labelContainer}>
-            <span>Tax</span>
-            <span>
-              <CurrencyFormatter amount={0} appendZero />
-            </span>
+            <span><CurrencyFormatter amount={shippingCost} appendZero /></span>
           </div>
         </div>
 
@@ -47,14 +42,14 @@ const OrderSummary = ({ cartItems = [] }) => {
             <span>Coupon Code</span>
             <FormInputField
               value={coupon}
-              handleChange={(_, coupon) => setCoupon(coupon)}
+              handleChange={(_, val) => setCoupon(val)}
               id="couponInput"
               icon="arrow"
             />
             <span>Gift Card</span>
             <FormInputField
               value={giftCard}
-              handleChange={(_, giftCard) => setGiftCard(giftCard)}
+              handleChange={(_, val) => setGiftCard(val)}
               id="giftCardInput"
               icon="arrow"
             />
@@ -63,9 +58,7 @@ const OrderSummary = ({ cartItems = [] }) => {
 
         <div className={styles.totalContainer}>
           <span>Total:</span>
-          <span>
-            <CurrencyFormatter amount={subtotal} appendZero />
-          </span>
+          <span><CurrencyFormatter amount={total} appendZero /></span>
         </div>
       </div>
 
@@ -74,7 +67,7 @@ const OrderSummary = ({ cartItems = [] }) => {
           onClick={() => navigate('/orderConfirm')}
           fullWidth
           level="primary"
-          disabled={!hasItems} // 🔒 prevent checkout if empty
+          disabled={!hasItems}
         >
           checkout
         </Button>
