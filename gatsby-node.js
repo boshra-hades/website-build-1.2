@@ -19,7 +19,7 @@ exports.createPages = async ({ actions }) => {
   const contentDir = './content';
   const pageFiles = fs.readdirSync(contentDir).filter(file => file.endsWith('.json'));
 
-  const pageTemplate = path.resolve('./src/templates/page.js');
+  const pageTemplate = path.resolve('./src/template/page.js');
   pageFiles.forEach((file) => {
     const page = require(path.join(__dirname, contentDir, file));
     const slug = page.slug === 'home' ? '' : page.slug;
