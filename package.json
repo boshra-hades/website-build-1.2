@@ -29,6 +29,7 @@
     "react-slick": "^0.30.2"
   },
   "devDependencies": {
+    "@stackbit/types": "^2.1.14",
     "plop": "^3.0.5",
     "prettier": "^3.2.5"
   }

@@ -1,0 +1,12 @@
+{
+    "name": "Product",
+    "label": "Product",
+    "fields": [
+      { "name": "title", "type": "string", "label": "Title" },
+      { "name": "heroText", "type": "string", "label": "Hero Text" },
+      { "name": "body", "type": "text", "label": "Body" },
+      { "name": "ctaText", "type": "string", "label": "Call to Action" },
+      { "name": "slug", "type": "string", "label": "Slug" }
+    ]
+  }
+  
